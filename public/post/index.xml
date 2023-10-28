@@ -1,28 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on Example Site</title>
-        <link>https://oddyti.github.io/post/</link>
-        <description>Recent content in Posts on Example Site</description>
+        <title>Posts on Oddyti的小站</title>
+        <link>https://oddyti.com/post/</link>
+        <description>Recent content in Posts on Oddyti的小站</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en</language>
-        <copyright>Example Person</copyright>
-        <lastBuildDate>Sat, 28 Oct 2023 21:38:49 +0800</lastBuildDate><atom:link href="https://oddyti.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <language>zh-cn</language>
+        <copyright>Oddyti</copyright>
+        <lastBuildDate>Sat, 28 Oct 2023 22:21:08 +0800</lastBuildDate><atom:link href="https://oddyti.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Test</title>
-        <link>https://oddyti.github.io/p/test/</link>
-        <pubDate>Sat, 28 Oct 2023 21:38:49 +0800</pubDate>
+        <link>https://oddyti.com/p/test/</link>
+        <pubDate>Sat, 28 Oct 2023 22:21:08 +0800</pubDate>
         
-        <guid>https://oddyti.github.io/p/test/</guid>
-        <description>&lt;p&gt;dadflaksjf;laskdj f;as&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>测试文章</title>
-        <link>https://oddyti.github.io/p/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</link>
-        <pubDate>Sat, 28 Oct 2023 18:34:54 +0800</pubDate>
-        
-        <guid>https://oddyti.github.io/p/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</guid>
-        <description>&lt;p&gt;这是一个测试文章&lt;/p&gt;
+        <guid>https://oddyti.com/p/test/</guid>
+        <description>&lt;p&gt;test&lt;/p&gt;
 </description>
         </item>
         

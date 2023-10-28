@@ -1,30 +1,24 @@
-baseurl: https://oddyti.github.io/
-languageCode: en-us
+baseurl: https://oddyti.com
+languageCode: zh-cn
 theme: hugo-theme-stack
 paginate: 5
-title: Example Site
-copyright: Example Person
+title: Oddyti的小站
+copyright: Oddyti
 
 languages:
-    en:
-        languageName: English
-        title: Example Site
-        weight: 1
-        params:
-            description: Example description
+    # en:
+    #     languageName: English
+    #     title: Example Site
+    #     weight: 1
+    #     params:
+    #         description: Example description
     zh-cn:
         languageName: 中文
-        title: 演示站点
+        title: Oddyti的小站
         weight: 2
         params:
-            description: 演示说明
-    ar:
-        languageName: عربي
-        languagedirection: rtl
-        title: موقع تجريبي
-        weight: 3
-        params:
-            description: وصف تجريبي
+            description: Oddyti的小站
+
 
 # Change it to your Disqus shortname before using
 disqusShortname: hugo-theme-stack
@@ -34,11 +28,11 @@ googleAnalytics:
 
 # Theme i18n support
 # Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
-DefaultContentLanguage: en
+DefaultContentLanguage: zh-cn
 
 # Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
 # This will make .Summary and .WordCount behave correctly for CJK languages.
-hasCJKLanguage: false
+hasCJKLanguage: true
 
 permalinks:
     post: /p/:slug/
