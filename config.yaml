@@ -1,4 +1,4 @@
-baseurl: https://oddyti.github.io/Blog-Hugo/
+baseurl: https://oddyti.github.io/
 languageCode: en-us
 theme: hugo-theme-stack
 paginate: 5
