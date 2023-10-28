@@ -31,7 +31,7 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         PERSONAL_TOKEN: ${{ secrets.deploy_token}}  # 你的个人访问令牌
-        EXTERNAL_REPOSITORY: Oddyti/Blog-Hugo  # 你的GitHub Pages仓库
+        EXTERNAL_REPOSITORY: Oddyti/oddyti.github.io  # 你的GitHub Pages仓库
         PUBLISH_BRANCH: depoly  # 或者是你的GitHub Pages分支
         PUBLISH_DIR: ./
         commit_message: ${{ github.event.head_commit.message }}
