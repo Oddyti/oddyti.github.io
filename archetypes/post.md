@@ -6,5 +6,5 @@ description = ''
 slug = ''
 tags = ['']
 categories = ['']
-cover = ''
+image = ''
 +++

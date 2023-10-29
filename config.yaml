@@ -1,7 +1,7 @@
 baseurl: https://oddyti.com/
 languageCode: zh-cn
 theme: hugo-theme-stack
-paginate: 5
+paginate: 8
 title: Oddyti的小站
 copyright: Oddyti
 
@@ -133,7 +133,7 @@ params:
             category: "Announcements"
             categoryID: "DIC_kwDOKmaUDs4CahZG"
             mapping: "pathname"
-            lightTheme: 
+            lightTheme: "light"
             darkTheme: "transparent_dark"
             reactionsEnabled: 1
             emitMetadata: 0

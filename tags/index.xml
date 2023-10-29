@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Oddyti</copyright>
-        <lastBuildDate>Sat, 02 Oct 2021 19:51:13 +0800</lastBuildDate><atom:link href="https://oddyti.com/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 29 Oct 2023 15:46:19 +0800</lastBuildDate><atom:link href="https://oddyti.com/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Hugo</title>
+        <link>https://oddyti.com/tags/hugo/</link>
+        <pubDate>Sun, 29 Oct 2023 15:46:19 +0800</pubDate>
+        
+        <guid>https://oddyti.com/tags/hugo/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>思考</title>
         <link>https://oddyti.com/tags/%E6%80%9D%E8%80%83/</link>
         <pubDate>Sat, 02 Oct 2021 19:51:13 +0800</pubDate>
