@@ -1,4 +1,4 @@
-baseurl: https://oddyti.com
+baseurl: https://oddyti.com/
 languageCode: zh-cn
 theme: hugo-theme-stack
 paginate: 5
@@ -35,7 +35,7 @@ DefaultContentLanguage: zh-cn
 hasCJKLanguage: true
 
 permalinks:
-    post: /p/:slug/
+    post: /post/:slug/
     page: /:slug/
 
 params:
@@ -43,7 +43,8 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon:  # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
+    favicon: /favicon.ico 
+    # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
 
     footer:
         since: 2020
@@ -54,15 +55,16 @@ params:
         lastUpdated: Jan 02, 2006 15:04 MST
 
     sidebar:
-        emoji: 🍥
-        subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        emoji: 🍐
+        subtitle: 是谁来自山川湖海，却囿于昼夜厨房与爱。
         avatar:
             enabled: true
             local: true
-            src: img/avatar.png
+            src: img/snoopy.jpg
+
 
     article:
-        math: false
+        math: true
         toc: true
         readingTime: true
         license:
@@ -71,7 +73,7 @@ params:
 
     comments:
         enabled: true
-        provider: disqus
+        provider: giscus
 
         disqusjs:
             shortname:
@@ -126,13 +128,13 @@ params:
             siteName: "" # You must insert a unique identifier here matching the one you registered (See https://cactus.chat/docs/getting-started/quick-start/#register-your-site)
 
         giscus:
-            repo:
-            repoID:
-            category:
-            categoryID:
-            mapping:
-            lightTheme:
-            darkTheme:
+            repo: "Oddyti/Giscus"
+            repoID: "R_kgDOKmaUDg"
+            category: "Announcements"
+            categoryID: "DIC_kwDOKmaUDs4CahZG"
+            mapping: "pathname"
+            lightTheme: 
+            darkTheme: "transparent_dark"
             reactionsEnabled: 1
             emitMetadata: 0
 
@@ -160,6 +162,7 @@ params:
                   limit: 10
         page:
             - type: toc
+            
 
     opengraph:
         twitter:
@@ -192,20 +195,48 @@ params:
 ### See https://docs.stack.jimmycai.com/configuration/custom-menu.html
 ### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter
 menu:
-    main: []
+    main: 
+        - identifier: home
+          name: 主页
+          url: /
+          weight: -100
+          params:
+            icon: home
+
+        - identifier: categories
+          name: 分类
+          url: /categories
+          weight: -90
+          params:
+            icon: categories
+
+        - identifier: archives
+          name: 归档
+          url: /archives
+          weight: -80
+          params:
+            icon: archives
+
+        - identifier: tags
+          name: 标签
+          url: /tags
+          weight: -70
+          params:
+            icon: tag
+
+        - identifier: link
+          name: 友链
+          url: /links
+          weight: -60
+          params:
+            icon: link
 
     social:
         - identifier: github
           name: GitHub
-          url: https://github.com/CaiJimmy/hugo-theme-stack
+          url: https://github.com/Oddyti
           params:
               icon: brand-github
-
-        - identifier: twitter
-          name: Twitter
-          url: https://twitter.com
-          params:
-              icon: brand-twitter
 
 related:
     includeNewer: true

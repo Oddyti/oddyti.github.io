@@ -1,0 +1,50 @@
+/* Place your custom SCSS in HUGO_SITE_FOLDER/assets/scss/custom.scss */
+.sidebar header .site-name {
+    font-size: 2rem;
+}
+
+.sidebar header .site-description {
+    font-size: 1.6rem;
+    line-height: 2rem;
+}
+
+.social-menu svg {
+    stroke-width: 1.7;
+}
+
+.menu {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.menu li svg {
+    stroke-width: 1.7;
+}
+
+.article-subtitle {
+    font-size: 1.7rem;
+}
+
+.search-form.widget label {
+    font-size: 1.45rem;
+}
+
+.search-form.widget input {
+    font-size: 1.5rem;
+    line-height: 3rem;
+}
+
+.widget--toc #TableOfContents li {
+    margin: 10px 0 10px 20px;
+    padding: 0;
+    line-height: 2rem;
+}
+
+.article-content>p {
+    margin: 1.2rem 0;
+}
+
+.article-content blockquote {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
