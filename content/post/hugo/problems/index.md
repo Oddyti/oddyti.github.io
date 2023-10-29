@@ -4,8 +4,8 @@ date = 2023-10-29T15:46:19+08:00
 draft = false
 description = '记录了在搭建整个博客以及自定义时遇到的问题和解决方法'
 slug = 'hugo-problems'
-tags = ['学习记录']
-categories = ['Hugo']
+tags = ['Hugo']
+categories = ['学习记录']
 image = 'cover.jpg'
 +++
 
@@ -54,5 +54,20 @@ image = 'cover.jpg'
     PUBLISH_DIR: ./
     commit_message: ${{ github.event.head_commit.message }}
     cname: www.oddyti.com # 你的域名
+```
+
+## Stack主题启用Local Search
+
+Stack主题自带Local Search功能，但是启用该功能需要在创建`content/search/index.md`
+
+内容如下：
+
+```toml
++++
+title = "Search"
+slug = "search"
+layout = "search"
+outputs = [ "html", "json" ]
++++
 ```
 
