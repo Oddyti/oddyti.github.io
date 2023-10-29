@@ -37,7 +37,7 @@ image = 'cover.jpg'
 
 2. 修改Github Pages设置，将`Build and deployment`的分支修改为`deploy`分支。
 
-   ![](assets\Github-Pages.png)
+   ![](Github-Pages.png)
 
 
 ## Github Action实现自动化部署后域名绑定丢失
@@ -71,3 +71,39 @@ outputs = [ "html", "json" ]
 +++
 ```
 
+## 文章本地能够加载图片，Github部署后图片无法加载
+
+文章内插入图片，需要严格按照[Stack文档-Markdown图片插入](https://stack.jimmycai.com/writing/markdown#insert-image-gallery)，文件目录为：
+
+```
+content
+└── gallery
+    └── my-first-gallery
+        ├── index.md
+        ├── image1.png
+        ├── image2.png
+        └── image3.png
+```
+
+文章Markdown内容为：
+
+```markdown
+--- content/gallery/my-first-gallery/index.md ---
+![Image 1](image1.png) ![Image 2](image2.png)
+![Image 3](image3.png)
+```
+
+以下为我的错误展示：
+
+```
+content
+└── gallery
+    └── my-first-gallery
+    	└── index.md
+    	└── assets
+            ├── image1.png
+            ├── image2.png
+            └── image3.png
+```
+
+这样会导致Github部署后无法加载图片。
