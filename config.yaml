@@ -1,7 +1,7 @@
 baseurl: https://oddyti.com/
 languageCode: zh-cn
 theme: hugo-theme-stack
-paginate: 8
+paginate: 8 # 文章达到分页数量
 title: Oddyti的小站
 copyright: Oddyti
 
