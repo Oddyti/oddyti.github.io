@@ -252,6 +252,7 @@
     <li><a href="#github仓库双分支分别存放源代码和部署后的代码">Github仓库双分支分别存放源代码和部署后的代码</a></li>
     <li><a href="#github-action实现自动化部署后域名绑定丢失">Github Action实现自动化部署后域名绑定丢失</a></li>
     <li><a href="#stack主题启用local-search">Stack主题启用Local Search</a></li>
+    <li><a href="#文章本地能够加载图片github部署后图片无法加载">文章本地能够加载图片，Github部署后图片无法加载</a></li>
   </ol>
 </nav>
         </div>
@@ -380,12 +381,16 @@
 </div></li>
 <li>
 <p>修改Github Pages设置，将<code>Build and deployment</code>的分支修改为<code>deploy</code>分支。</p>
-<p><img src="/assets%5cGithub-Pages.png"
-	
-	
-	
+<p><img src="/post/hugo-problems/Github-Pages.png"
+	width="1076"
+	height="437"
+	srcset="/post/hugo-problems/Github-Pages_hu49859898b60ebae6f2f3671ad891e7ac_39258_480x0_resize_box_3.png 480w, /post/hugo-problems/Github-Pages_hu49859898b60ebae6f2f3671ad891e7ac_39258_1024x0_resize_box_3.png 1024w"
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="246"
+		data-flex-basis="590px"
 	
 ></p>
 </li>
@@ -438,7 +443,67 @@
 </span></span><span class="line"><span class="cl"><span class="err">+++</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="文章本地能够加载图片github部署后图片无法加载">文章本地能够加载图片，Github部署后图片无法加载</h2>
+<p>文章内插入图片，需要严格按照<a class="link" href="https://stack.jimmycai.com/writing/markdown#insert-image-gallery"  target="_blank" rel="noopener"
+    >Stack文档-Markdown图片插入</a>，文件目录为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">content
+</span></span><span class="line"><span class="cl">└── gallery
+</span></span><span class="line"><span class="cl">    └── my-first-gallery
+</span></span><span class="line"><span class="cl">        ├── index.md
+</span></span><span class="line"><span class="cl">        ├── image1.png
+</span></span><span class="line"><span class="cl">        ├── image2.png
+</span></span><span class="line"><span class="cl">        └── image3.png
+</span></span></code></pre></td></tr></table>
 </div>
+</div><p>文章Markdown内容为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">--- content/gallery/my-first-gallery/index.md ---
+</span></span><span class="line"><span class="cl">![<span class="nt">Image 1</span>](<span class="na">image1.png</span>) ![<span class="nt">Image 2</span>](<span class="na">image2.png</span>)
+</span></span><span class="line"><span class="cl">![<span class="nt">Image 3</span>](<span class="na">image3.png</span>)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>以下为我的错误展示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">content
+</span></span><span class="line"><span class="cl">└── gallery
+</span></span><span class="line"><span class="cl">    └── my-first-gallery
+</span></span><span class="line"><span class="cl">    	└── index.md
+</span></span><span class="line"><span class="cl">    	└── assets
+</span></span><span class="line"><span class="cl">            ├── image1.png
+</span></span><span class="line"><span class="cl">            ├── image2.png
+</span></span><span class="line"><span class="cl">            └── image3.png
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这样会导致Github部署后无法加载图片。</p>
+
 </section>
 
 
