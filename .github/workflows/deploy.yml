@@ -35,3 +35,4 @@ jobs:
         PUBLISH_BRANCH: deploy  # 或者是你的GitHub Pages分支
         PUBLISH_DIR: ./
         commit_message: ${{ github.event.head_commit.message }}
+        cname: www.oddyti.com
