@@ -14,14 +14,14 @@ image = ''
 
 最优化理论与算法课程作业题，用遗传算法求解如下问题：
 $$
-max \quad f(x) = x \cdot sin(3x) , \,   -1 \le x \le 30
+max \quad f(x) = x \cdot sin(3x) ,   -1 \le x \le 30
 $$
 
 ## 算法思路
 
 算法基本流程资料已经很多了，这里贴一个课程PPT里的图：
 
-![](GA流程图.png)
+<img src="GA流程图.png" alt="GA流程图" style="zoom: 33%;" />
 
 ### 编码
 
@@ -31,7 +31,7 @@ $$
 
 基因编码和实际解转换如下：
 $$
-x = lower\_limit+x_{dec}\cdot \frac{upper\_limit - lower\_limit}{2^{gene\_length}-1} \\\\
+x = lower+x_{dec}\cdot \frac{upper\ - lower\}{2^{genelength}-1} \\\\
 x_{dec} = bin2dec(x_{bin})
 $$
 
