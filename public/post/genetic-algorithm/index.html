@@ -370,28 +370,17 @@
     <h2 id="问题">问题</h2>
 <p>最优化理论与算法课程作业题，用遗传算法求解如下问题：
 $$
-max \quad f(x) = x \cdot sin(3x) , ,   -1 \le x \le 30
+max \quad f(x) = x \cdot sin(3x) ,   -1 \le x \le 30
 $$</p>
 <h2 id="算法思路">算法思路</h2>
 <p>算法基本流程资料已经很多了，这里贴一个课程PPT里的图：</p>
-<p><img src="/post/genetic-algorithm/GA%E6%B5%81%E7%A8%8B%E5%9B%BE.png"
-	width="1112"
-	height="1125"
-	srcset="/post/genetic-algorithm/GA%E6%B5%81%E7%A8%8B%E5%9B%BE_hu546a66228cd7434cd7a7af7583129d85_100191_480x0_resize_box_3.png 480w, /post/genetic-algorithm/GA%E6%B5%81%E7%A8%8B%E5%9B%BE_hu546a66228cd7434cd7a7af7583129d85_100191_1024x0_resize_box_3.png 1024w"
-	loading="lazy"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="98"
-		data-flex-basis="237px"
-	
-></p>
+<img src="GA流程图.png" alt="GA流程图" style="zoom: 33%;" />
 <h3 id="编码">编码</h3>
 <p>将问题的解用一种码表示，常用二进制编码。</p>
 <p>此题中解即为x的值，考虑6位小数精度，将区间$[-1,30]$调整位$[0,31\cdot 10^{6}]$，得到二进制码码长为25，即基因长度。</p>
 <p>基因编码和实际解转换如下：
 $$
-x = lower_limit+x_{dec}\cdot \frac{upper_limit - lower_limit}{2^{gene_length}-1} \\
+x = lower+x_{dec}\cdot \frac{upper\ - lower}{2^{genelength}-1} \\
 x_{dec} = bin2dec(x_{bin})
 $$</p>
 <h3 id="产生初始种群">产生初始种群</h3>
@@ -723,7 +712,7 @@ $$
             
                 
 <article class="">
-    <a href="/post/heuristically-search/">
+    <a href="/post/simulated-annealing/">
         
         
 

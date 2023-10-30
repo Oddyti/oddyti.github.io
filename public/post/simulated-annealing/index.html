@@ -2,16 +2,16 @@
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='最优理论算法课程作业'>
-<title>最优化理论算法：遗传算法寻找函数最值Matlab实现</title>
+<title>最优化理论算法：模拟退火算法寻找函数最值Matlab实现</title>
 
-<link rel='canonical' href='https://oddyti.com/post/genetic-algorithm/'>
+<link rel='canonical' href='https://oddyti.com/post/simulated-annealing/'>
 
-<link rel="stylesheet" href="/scss/style.min.90c6a606c4356c20c6f665041899b243e27c55b251b108787e239872a5fd232c.css"><meta property='og:title' content='最优化理论算法：遗传算法寻找函数最值Matlab实现'>
+<link rel="stylesheet" href="/scss/style.min.90c6a606c4356c20c6f665041899b243e27c55b251b108787e239872a5fd232c.css"><meta property='og:title' content='最优化理论算法：模拟退火算法寻找函数最值Matlab实现'>
 <meta property='og:description' content='最优理论算法课程作业'>
-<meta property='og:url' content='https://oddyti.com/post/genetic-algorithm/'>
+<meta property='og:url' content='https://oddyti.com/post/simulated-annealing/'>
 <meta property='og:site_name' content='Oddyti的小站'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='最优化算法' /><meta property='article:published_time' content='2023-10-30T14:43:47&#43;08:00'/><meta property='article:modified_time' content='2023-10-30T14:43:47&#43;08:00'/>
-<meta name="twitter:title" content="最优化理论算法：遗传算法寻找函数最值Matlab实现">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='最优化算法' /><meta property='article:published_time' content='2023-10-30T14:44:26&#43;08:00'/><meta property='article:modified_time' content='2023-10-30T14:44:26&#43;08:00'/>
+<meta name="twitter:title" content="最优化理论算法：模拟退火算法寻找函数最值Matlab实现">
 <meta name="twitter:description" content="最优理论算法课程作业">
     <link rel="shortcut icon" href="/favicon.ico" />
 
@@ -273,16 +273,14 @@
     <li><a href="#问题">问题</a></li>
     <li><a href="#算法思路">算法思路</a>
       <ol>
-        <li><a href="#编码">编码</a></li>
-        <li><a href="#产生初始种群">产生初始种群</a></li>
-        <li><a href="#计算适应度">计算适应度</a></li>
-        <li><a href="#选择">选择</a></li>
-        <li><a href="#交叉">交叉</a></li>
-        <li><a href="#变异">变异</a></li>
-        <li><a href="#算法终止判断">算法终止判断</a></li>
-        <li><a href="#主函数">主函数</a></li>
+        <li><a href="#初始化">初始化</a></li>
+        <li><a href="#产生领域解">产生领域解</a></li>
+        <li><a href="#领域解接受判断">领域解接受判断</a></li>
+        <li><a href="#判断">判断</a></li>
+        <li><a href="#降温">降温</a></li>
       </ol>
     </li>
+    <li><a href="#matlab实现">Matlab实现</a></li>
     <li><a href="#结果">结果</a></li>
   </ol>
 </nav>
@@ -311,7 +309,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/post/genetic-algorithm/">最优化理论算法：遗传算法寻找函数最值Matlab实现</a>
+            <a href="/post/simulated-annealing/">最优化理论算法：模拟退火算法寻找函数最值Matlab实现</a>
         </h2>
     
         
@@ -352,7 +350,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 3 分钟
+                    阅读时长: 2 分钟
                 </time>
             </div>
         
@@ -373,168 +371,23 @@ $$
 max \quad f(x) = x \cdot sin(3x) ,   -1 \le x \le 30
 $$</p>
 <h2 id="算法思路">算法思路</h2>
-<p>算法基本流程资料已经很多了，这里贴一个课程PPT里的图：</p>
-<img src="GA流程图.png" alt="GA流程图" style="zoom: 33%;" />
-<h3 id="编码">编码</h3>
-<p>将问题的解用一种码表示，常用二进制编码。</p>
-<p>此题中解即为x的值，考虑6位小数精度，将区间$[-1,30]$调整位$[0,31\cdot 10^{6}]$，得到二进制码码长为25，即基因长度。</p>
-<p>基因编码和实际解转换如下：
-$$
-x = lower+x_{dec}\cdot \frac{upper\ - lower}{2^{genelength}-1} \\
-x_{dec} = bin2dec(x_{bin})
-$$</p>
-<h3 id="产生初始种群">产生初始种群</h3>
-<p>确定好了编码类型和长度之后，产生初始种群，选择合适的种群大小。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="c">% 初始化种群</span>
-</span></span><span class="line"><span class="cl"><span class="n">populations</span> <span class="p">=</span> <span class="n">randi</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">population_size</span><span class="p">,</span> <span class="n">gene_length</span><span class="p">);</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="计算适应度">计算适应度</h3>
-<p>遗传算法中以种群中个体的适应度来作为选择的依据。本题中适应度由目标函数变换而成。
-$$
-fitness(x) = f(x)
-$$
-适应度计算函数：<code>cal_fitness()</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="c">% 计算适应度函数</span>
-</span></span><span class="line"><span class="cl"><span class="k">function</span><span class="w"> </span>fitness <span class="p">=</span><span class="w"> </span><span class="nf">cal_fitness</span><span class="p">(</span>func, populations, upper_limit, lower_limit<span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">[</span><span class="n">population_size</span><span class="p">,</span> <span class="n">gene_length</span><span class="p">]</span> <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">populations</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">populations_x</span> <span class="p">=</span> <span class="n">bin2dec</span><span class="p">(</span><span class="n">num2str</span><span class="p">(</span><span class="n">populations</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="p">=</span> <span class="n">lower_limit</span> <span class="o">+</span> <span class="n">populations_x</span> <span class="o">*</span> <span class="p">(</span><span class="n">upper_limit</span> <span class="o">-</span> <span class="n">lower_limit</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> ^ <span class="n">gene_length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">fitness</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">population_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="nb">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">population_size</span>
-</span></span><span class="line"><span class="cl">        <span class="n">fitness</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="p">=</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">    <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="选择">选择</h3>
-<p>得到种群中个体的适应度后，便可以根据适应度进行选择。常用的选择方法为：比例选择。其基本思想：每个个体被选中的概率与其适应度值成正比，设种群规模为$M$，个体$i$的适应度值为$f_i$，则个体$i$被选中的概率$P_i$为:
-$$
-P_i = \frac{f_i}{\sum_{i = 1}^{M}f_i}
-$$
-确定好选中概率后，采用轮盘赌的方式来选择出个体。轮盘赌次数为个体数量。</p>
-<p>轮盘赌选择函数：<code>select_population()</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="c">% 计算适应度函数</span>
-</span></span><span class="line"><span class="cl"><span class="k">function</span><span class="w"> </span>fitness <span class="p">=</span><span class="w"> </span><span class="nf">cal_fitness</span><span class="p">(</span>func, populations, upper_limit, lower_limit<span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">[</span><span class="n">population_size</span><span class="p">,</span> <span class="n">gene_length</span><span class="p">]</span> <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">populations</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">populations_x</span> <span class="p">=</span> <span class="n">bin2dec</span><span class="p">(</span><span class="n">num2str</span><span class="p">(</span><span class="n">populations</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="p">=</span> <span class="n">lower_limit</span> <span class="o">+</span> <span class="n">populations_x</span> <span class="o">*</span> <span class="p">(</span><span class="n">upper_limit</span> <span class="o">-</span> <span class="n">lower_limit</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> ^ <span class="n">gene_length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">fitness</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">population_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="nb">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">population_size</span>
-</span></span><span class="line"><span class="cl">        <span class="n">fitness</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="p">=</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">    <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="交叉">交叉</h3>
-<p>选择出个体后，根据交叉概率，对个体进行两两交叉操作，对于二进制编码，常用交叉的方法是单点交叉。交叉概率用以决定当前一对个体是否进行交叉，不宜太大，否则个体更新过快，高适应度的个体容易被破坏，不宜太小，否则算法容易停滞。</p>
-<p>交叉函数：<code>cross_population()</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="c">% 交叉</span>
-</span></span><span class="line"><span class="cl"><span class="k">function</span><span class="w"> </span>new_populations <span class="p">=</span><span class="w"> </span><span class="nf">cross_population</span><span class="p">(</span>populations, cross_prob<span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">[</span><span class="n">population_size</span><span class="p">,</span> <span class="n">gene_length</span><span class="p">]</span> <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">populations</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">new_populations</span> <span class="p">=</span> <span class="n">populations</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="nb">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="n">population_size</span>
-</span></span><span class="line"><span class="cl">        <span class="n">prob</span> <span class="p">=</span> <span class="nb">rand</span><span class="p">;</span> <span class="c">% 用于判决是否进行交叉</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">prob</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">cross_prob</span>
-</span></span><span class="line"><span class="cl">            <span class="n">cross_index</span> <span class="p">=</span> <span class="n">randi</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="n">gene_length</span><span class="p">]);</span>
-</span></span><span class="line"><span class="cl">            <span class="n">temp</span> <span class="p">=</span> <span class="n">new_populations</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span> <span class="p">:);</span>
-</span></span><span class="line"><span class="cl">            <span class="n">temp</span><span class="p">(:,</span> <span class="n">cross_index</span><span class="p">:</span><span class="k">end</span><span class="p">)</span> <span class="p">=</span> <span class="n">new_populations</span><span class="p">(</span><span class="nb">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cross_index</span><span class="p">:</span><span class="k">end</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="n">new_populations</span><span class="p">(</span><span class="nb">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cross_index</span><span class="p">:</span><span class="k">end</span><span class="p">)</span> <span class="p">=</span> <span class="n">new_populations</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span> <span class="n">cross_index</span><span class="p">:</span><span class="k">end</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="n">new_populations</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span> <span class="p">:)</span> <span class="p">=</span> <span class="n">temp</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">end</span>
-</span></span><span class="line"><span class="cl">    <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="变异">变异</h3>
-<p>交叉完成后，根据变异概率对个体进行变异操作，具体是指对变异的个体随机选择某一位进行反转操作。并非所有被选择的个体，都要进行变异操作。变异概率太小很难产生新个体，太大会使GA成为随机搜索。</p>
-<p>变异函数：<code>mutate_population()</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="c">% 变异函数</span>
-</span></span><span class="line"><span class="cl"><span class="k">function</span><span class="w"> </span>new_populations <span class="p">=</span><span class="w"> </span><span class="nf">mutate_population</span><span class="p">(</span>populations, mutation_prob<span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">[</span><span class="n">population_size</span><span class="p">,</span> <span class="n">gene_length</span><span class="p">]</span> <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">populations</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">new_populations</span> <span class="p">=</span> <span class="n">populations</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="nb">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">population_size</span>
-</span></span><span class="line"><span class="cl">        <span class="n">prob</span> <span class="p">=</span> <span class="nb">rand</span><span class="p">;</span> <span class="c">% 决定是否变异</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">prob</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">mutation_prob</span>
-</span></span><span class="line"><span class="cl">            <span class="n">mutation_index</span> <span class="p">=</span> <span class="n">randi</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="n">gene_length</span><span class="p">]);</span>
-</span></span><span class="line"><span class="cl">            <span class="n">new_populations</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span> <span class="n">mutation_index</span><span class="p">)</span> <span class="p">=</span> <span class="o">~</span><span class="n">new_populations</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span> <span class="n">mutation_index</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">end</span>
-</span></span><span class="line"><span class="cl">    <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="算法终止判断">算法终止判断</h3>
-<p>常用预先设定迭代（进化）次数作为终止条件。其次以最优值是否连续若干步没有明显变化作为终止条件。</p>
-<h3 id="主函数">主函数</h3>
+<p>退火算法具体思路可以理解为晚上喝醉后爬山，目标是到山顶。由于是晚上，所以这个人只能看见附近一定距离的山的情况。刚开始是醉的，所以这个人迷迷糊糊随机爬，可能按正确的方向向上爬，也可能向下爬，但是随着醉酒程度慢慢减轻，这个人慢慢看清了附近的形势，于是向上爬。最后达到山顶。</p>
+<p>而模拟退火算法来源于固体退火原理，是一种基于概率的算法，将固体加温至充分高，再让其徐徐冷却，温度高时，固体内部粒子无序，内能大，而徐徐冷却时粒子渐趋有序，在每个温度都达到平衡态，最后在常温时达到基态，内能减为最小。</p>
+<p>冷却初期的高温对应了醉酒爬山初期醉酒情况，这时候无序，按一定的概率接受向下的方向。后期温度降低对应酒醒，这时候接受错误方向的概率非常低。</p>
+<p>退火算法的好处是按照一定概率接受错误方向，可以跳出局部最优解，并且随着进度慢慢降低接受错误方向的概率。</p>
+<p>流程图直接放一张PPT的流程图：</p>
+<img src="退火算法流程图.png" alt="退火算法流程图" style="zoom:90%;" />
+<h3 id="初始化">初始化</h3>
+<p>选取区间任意解，设定足够高的初始温度。</p>
+<h3 id="产生领域解">产生领域解</h3>
+<p>在初始解（上一解）附近随机产生一个领域解，即随机找一个方向爬山。</p>
+<h3 id="领域解接受判断">领域解接受判断</h3>
+<p>如果领域解的方向是正确方向（此题即函数值更大），则接受领域解。如果是错误方向，则按照一定概率接受，接收概率与当前温度相关。</p>
+<h3 id="判断">判断</h3>
+<p>若内循环次数大于预设次数，认为这个温度下爬山已经爬够了，降温。否则继续爬。</p>
+<h3 id="降温">降温</h3>
+<p>按照比例或者增量降温，如果温度达到低温条件，则停止。否则降温后继续爬山。</p>
+<h2 id="matlab实现">Matlab实现</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -578,13 +431,6 @@ $$
 </span><span class="lnt">39
 </span><span class="lnt">40
 </span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="n">clear</span><span class="p">;</span>
@@ -594,45 +440,38 @@ $$
 </span></span><span class="line"><span class="cl"><span class="c">% 目标函数</span>
 </span></span><span class="line"><span class="cl"><span class="n">func</span> <span class="p">=</span> <span class="p">@(</span><span class="n">x</span><span class="p">)</span> <span class="n">x</span> <span class="o">*</span> <span class="nb">sin</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">% 全局参数</span>
-</span></span><span class="line"><span class="cl"><span class="n">population_size</span> <span class="p">=</span> <span class="mi">100</span><span class="p">;</span> 	<span class="c">% 种群数量</span>
-</span></span><span class="line"><span class="cl"><span class="n">gene_length</span> <span class="p">=</span> <span class="mi">25</span><span class="p">;</span> 		<span class="c">% 基因长度，精度定为6位小数</span>
-</span></span><span class="line"><span class="cl"><span class="n">cross_prob</span> <span class="p">=</span> <span class="mf">0.20</span><span class="p">;</span> 		<span class="c">% 交叉概率</span>
-</span></span><span class="line"><span class="cl"><span class="n">mutation_prob</span> <span class="p">=</span> <span class="mf">0.01</span><span class="p">;</span> 	<span class="c">% 变异概率</span>
-</span></span><span class="line"><span class="cl"><span class="n">max_epochs</span> <span class="p">=</span> <span class="mi">1000</span><span class="p">;</span> 		<span class="c">% 最大迭代次数</span>
-</span></span><span class="line"><span class="cl"><span class="n">upper_limit</span> <span class="p">=</span> <span class="mi">30</span><span class="p">;</span> 		<span class="c">% 上限</span>
-</span></span><span class="line"><span class="cl"><span class="n">lower_limit</span> <span class="p">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> 		<span class="c">% 下限</span>
-</span></span><span class="line"><span class="cl"><span class="n">best_x_bin</span> <span class="p">=</span> <span class="p">[];</span> 		<span class="c">% 最优解</span>
-</span></span><span class="line"><span class="cl"><span class="n">best_f</span> <span class="p">=</span> <span class="o">-</span><span class="n">Inf</span><span class="p">;</span> 			<span class="c">% 最优解适应度</span>
+</span></span><span class="line"><span class="cl"><span class="n">x0</span> <span class="p">=</span> <span class="mi">10</span><span class="p">;</span> 		<span class="c">% 初始解</span>
+</span></span><span class="line"><span class="cl"><span class="n">T0</span> <span class="p">=</span> <span class="mf">1e4</span><span class="p">;</span> 		<span class="c">% 初始温度</span>
+</span></span><span class="line"><span class="cl"><span class="n">Tf</span> <span class="p">=</span> <span class="mf">1e-4</span><span class="p">;</span> 		<span class="c">% 终止温度</span>
+</span></span><span class="line"><span class="cl"><span class="n">r</span> <span class="p">=</span> <span class="mf">0.97</span><span class="p">;</span> 		<span class="c">% 降温指数</span>
+</span></span><span class="line"><span class="cl"><span class="n">epochs</span> <span class="p">=</span> <span class="mf">1e3</span><span class="p">;</span>	<span class="c">% 迭代次数</span>
+</span></span><span class="line"><span class="cl"><span class="n">Tk</span> <span class="p">=</span> <span class="n">T0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">xk</span> <span class="p">=</span> <span class="n">x0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">% 初始化种群</span>
-</span></span><span class="line"><span class="cl"><span class="n">populations</span> <span class="p">=</span> <span class="n">randi</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">population_size</span><span class="p">,</span> <span class="n">gene_length</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">% 迭代主函数</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">epoch</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">max_epochs</span>
-</span></span><span class="line"><span class="cl">    <span class="c">% 计算适应度</span>
-</span></span><span class="line"><span class="cl">    <span class="n">fitness</span> <span class="p">=</span> <span class="n">cal_fitness</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">populations</span><span class="p">,</span> <span class="n">upper_limit</span><span class="p">,</span> <span class="n">lower_limit</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c">% 选择 轮盘赌</span>
-</span></span><span class="line"><span class="cl">    <span class="n">populations_selected</span> <span class="p">=</span> <span class="n">select_population</span><span class="p">(</span><span class="n">populations</span><span class="p">,</span> <span class="n">fitness</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c">% 交叉</span>
-</span></span><span class="line"><span class="cl">    <span class="n">populations_crossed</span> <span class="p">=</span> <span class="n">cross_population</span><span class="p">(</span><span class="n">populations_selected</span><span class="p">,</span> <span class="n">cross_prob</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c">% 变异</span>
-</span></span><span class="line"><span class="cl">    <span class="n">populations_mutated</span> <span class="p">=</span> <span class="n">mutate_population</span><span class="p">(</span><span class="n">populations_crossed</span><span class="p">,</span> <span class="n">mutation_prob</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c">% 更新种群</span>
-</span></span><span class="line"><span class="cl">    <span class="n">populations</span> <span class="p">=</span> <span class="n">populations_mutated</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="c">% 更新最优解</span>
-</span></span><span class="line"><span class="cl">    <span class="n">fitness</span> <span class="p">=</span> <span class="n">cal_fitness</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">populations</span><span class="p">,</span> <span class="n">upper_limit</span><span class="p">,</span> <span class="n">lower_limit</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="n">max_fitness</span><span class="p">,</span> <span class="n">max_index</span><span class="p">]</span> <span class="p">=</span> <span class="n">max</span><span class="p">(</span><span class="n">fitness</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">max_fitness</span> <span class="o">&gt;</span> <span class="n">best_f</span>
-</span></span><span class="line"><span class="cl">        <span class="n">best_x_bin</span> <span class="p">=</span> <span class="n">populations</span><span class="p">(</span><span class="n">max_index</span><span class="p">,</span> <span class="p">:);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">best_x</span> <span class="p">=</span> <span class="n">bin2dec</span><span class="p">(</span><span class="n">num2str</span><span class="p">(</span><span class="n">best_x_bin</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">        <span class="n">best_x</span> <span class="p">=</span> <span class="n">lower_limit</span> <span class="o">+</span> <span class="n">best_x</span> <span class="o">*</span> <span class="p">(</span><span class="n">upper_limit</span> <span class="o">-</span> <span class="n">lower_limit</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> ^ <span class="n">gene_length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">best_f</span> <span class="p">=</span> <span class="n">max_fitness</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">true</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="nb">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">epochs</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x_new</span> <span class="p">=</span> <span class="n">xk</span> <span class="o">+</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">x_new</span> <span class="o">&gt;</span> <span class="mi">30</span>
+</span></span><span class="line"><span class="cl">            <span class="n">x_new</span> <span class="p">=</span> <span class="mi">30</span> <span class="o">-</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">end</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">x_new</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="n">x_new</span> <span class="p">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">end</span>
+</span></span><span class="line"><span class="cl">        <span class="n">delta_f</span> <span class="p">=</span> <span class="n">func</span><span class="p">(</span><span class="n">x_new</span><span class="p">)</span> <span class="o">-</span> <span class="n">func</span><span class="p">(</span><span class="n">xk</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">delta_f</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">            <span class="n">xk</span> <span class="p">=</span> <span class="n">x_new</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">            <span class="n">esp</span> <span class="p">=</span> <span class="nb">rand</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="nb">exp</span><span class="p">(</span><span class="n">delta_f</span> <span class="o">./</span> <span class="n">Tk</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">esp</span>
+</span></span><span class="line"><span class="cl">                <span class="n">xk</span> <span class="p">=</span> <span class="n">x_new</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">end</span>
+</span></span><span class="line"><span class="cl">        <span class="k">end</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Tk</span> <span class="p">=</span> <span class="n">Tk</span> <span class="o">*</span> <span class="n">r</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">Tk</span> <span class="o">&lt;</span> <span class="n">Tf</span>
+</span></span><span class="line"><span class="cl">        <span class="n">best_x</span> <span class="p">=</span> <span class="n">xk</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">best_f</span> <span class="p">=</span> <span class="n">func</span><span class="p">(</span><span class="n">xk</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">end</span>
 </span></span><span class="line"><span class="cl"><span class="k">end</span>
 </span></span></code></pre></td></tr></table>
@@ -643,7 +482,7 @@ $$
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">最优解 x = 29.840208， 目标函数值 f = 29.836955
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">最优解 x = 29.849416， 目标函数值 f = 29.846949
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
@@ -712,12 +551,12 @@ $$
             
                 
 <article class="">
-    <a href="/post/simulated-annealing/">
+    <a href="/post/genetic-algorithm/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">最优化理论算法：模拟退火算法寻找函数最值Matlab实现</h2>
+            <h2 class="article-title">最优化理论算法：遗传算法寻找函数最值Matlab实现</h2>
         </div>
     </a>
 </article>
