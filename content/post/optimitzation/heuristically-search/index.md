@@ -172,3 +172,7 @@ end
 共迭代1439次，结果如下：
 
 ![](sokudu2结果.png)
+
+## 参考
+
+1. [启发式搜索算法求解数独](https://www.jianshu.com/p/2cc77614e88d)
