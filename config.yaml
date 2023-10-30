@@ -235,9 +235,23 @@ menu:
         - identifier: github
           name: GitHub
           url: https://github.com/Oddyti
+          weight: -100
           params:
-              icon: brand-github
+              icon: github
 
+        - identifier: bilibili
+          name: Biligili
+          url: https://space.bilibili.com/51329228
+          weight: -90
+          params:
+              icon: bilibili
+              
+        - identifier: netease-cloud
+          name: 网易云
+          url: https://music.163.com/#/user/home?id=556522560
+          weight: -80
+          params:
+              icon: netease-cloud
 related:
     includeNewer: true
     threshold: 60
