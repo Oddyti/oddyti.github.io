@@ -1,7 +1,7 @@
 +++
 title = '一些关于相声、脱口秀、喜剧话剧的思考'
 date = 2021-10-02T19:51:13+08:00
-draft = false
+draft = true
 description = '最近慢慢开始和小梨一起看脱口秀，国庆也一起去看了开心麻花的话剧《贼想得到你》。便有一些关于相声、脱口秀、喜剧话剧的思考。'
 slug = 'about-comedies'
 tags = ['思考']

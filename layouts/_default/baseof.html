@@ -3,6 +3,9 @@
     <head>
         {{- partial "head/head.html" . -}}
         {{- block "head" . -}}{{ end }}
+        {{ if eq .Draft true }}
+            <meta name="robots" content="noindex">
+        {{ end }}
     </head>
     <body class="{{ block `body-class` . }}{{ end }}">
         {{- partial "head/colorScheme" . -}}
@@ -24,5 +27,14 @@
             </main>
         </div>
         {{ partial "footer/include.html" . }}
+        {{ if eq .Draft true }}
+        {{ $draftJs := resources.Get "js/draft.js"
+            | minify
+            | fingerprint }}
+        <script
+            src="{{ $draftJs.RelPermalink }}"
+            integrity="{{ $draftJs.Data.Integrity }}"
+        ></script>
+        {{ end }}
     </body>
 </html>

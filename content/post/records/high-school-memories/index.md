@@ -1,7 +1,7 @@
 +++
 title = '重拾'
 date = 2021-03-21T14:25:49+08:00
-draft = false
+draft = true
 description = '再看一些高中的随笔'
 slug = 'high-school-memories'
 tags = ['回忆']
