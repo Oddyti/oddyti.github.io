@@ -1,7 +1,7 @@
 +++
 title = '远望'
 date = 2021-04-06T15:16:53+08:00
-draft = false
+draft = true
 description = '高中某个假期，乘车回平武。从天亮到天黑，延山路前行。'
 slug = 'far-away'
 tags = ['生活']
