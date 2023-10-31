@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Oddyti</copyright>
-    <lastBuildDate>Mon, 30 Oct 2023 14:44:26 +0800</lastBuildDate><atom:link href="https://oddyti.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Oct 2023 22:40:13 +0800</lastBuildDate><atom:link href="https://oddyti.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows软件分享/新系统配置清单</title>
+      <link>https://oddyti.com/post/apps-share/</link>
+      <pubDate>Tue, 31 Oct 2023 22:40:13 +0800</pubDate>
+      
+      <guid>https://oddyti.com/post/apps-share/</guid>
+      <description>浏览器 - Edge Win11自带。 Office全家桶 无须解释。 QQ 无须解释。 微信 无须解释。 卸载软件 - Geek Uninstaller - the best FREE uninstaller 免费，一个非常小巧的卸载软件的软件，</description>
+    </item>
+    
     <item>
       <title>最优化理论算法：模拟退火算法寻找函数最值Matlab实现</title>
       <link>https://oddyti.com/post/simulated-annealing/</link>

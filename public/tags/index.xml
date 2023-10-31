@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Oddyti</copyright>
-        <lastBuildDate>Mon, 30 Oct 2023 14:44:26 +0800</lastBuildDate><atom:link href="https://oddyti.com/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 31 Oct 2023 22:40:13 +0800</lastBuildDate><atom:link href="https://oddyti.com/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>windows</title>
+        <link>https://oddyti.com/tags/windows/</link>
+        <pubDate>Tue, 31 Oct 2023 22:40:13 +0800</pubDate>
+        
+        <guid>https://oddyti.com/tags/windows/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>最优化算法</title>
         <link>https://oddyti.com/tags/%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/</link>
         <pubDate>Mon, 30 Oct 2023 14:44:26 +0800</pubDate>
