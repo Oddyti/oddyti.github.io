@@ -1,5 +1,5 @@
 (function () {
-    const PASSWORD = 'letmeseesee';
+    const PASSWORD = 'a5211ce461fbfdfa1d891be3754643e4f47e0e04ce811a1652abd3257530b35c';
     const DIV_BACKGROUND_COLOR = 'var(--body-background)';
     const DIV_ID = 'draft_div';
     const TEXTDIV_ID = 'text_div';
@@ -30,11 +30,14 @@
     const handleSubmit = event => {
       event.preventDefault();
       const inputPassword = document.getElementById(INPUT_ID).value;
-      if (inputPassword === PASSWORD) {
+      const shaObj = new jsSHA('SHA-256', 'TEXT');
+      shaObj.update(inputPassword);
+      const inputPasswordHash =  shaObj.getHash('HEX');
+      if (inputPasswordHash === PASSWORD) {
         removeDiv();
       }
     };
-  
+
     const createForm = () => {
       const form = document.createElement('form');
       form.addEventListener('submit', handleSubmit);
