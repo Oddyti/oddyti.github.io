@@ -354,23 +354,19 @@
     
     <h2 id="问题">问题</h2>
 <p>最优化理论与算法课程上留了一道作业题，用启发式搜索算法求解数独问题。数独如下。</p>
-<p><img src="/post/heuristically-search/sokudu.png"
-	width="440"
-	height="360"
-	srcset="/post/heuristically-search/sokudu_huf9996c0c3dfa0c703e548cca6b870fd6_22658_480x0_resize_box_3.png 480w, /post/heuristically-search/sokudu_huf9996c0c3dfa0c703e548cca6b870fd6_22658_1024x0_resize_box_3.png 1024w"
+<p><img src="https://cdn.jsdelivr.net/gh/Oddyti/Resources/picgo-img/sokudu.png"
+	
+	
+	
 	loading="lazy"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="122"
-		data-flex-basis="293px"
 	
 ></p>
 <h2 id="算法思路">算法思路</h2>
 <p>基础算法上采用深度优先搜索，即找到一个空位就填入一个符合数独要求的数字，即候选数，然后扩展该节点，继续找下一个空位填入一个候选数，扩展节点。如果发现有空位没有候选数可以填，就回溯。直到所有的空位都填满数字。</p>
 <p>在此基础上，考虑启发式搜索，即寻找空位时候，先求出所有空位的候选数的数量，然后找到候选数数量最少的空位作为扩展的节点。可以减少搜索次数。</p>
 <p>算法流程图如下：</p>
-<p><img src="/post/heuristically-search/sokudu%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B%E5%9B%BE.svg"
+<p><img src="https://cdn.jsdelivr.net/gh/Oddyti/Resources/picgo-img/sokudu%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B%E5%9B%BE.svg"
 	
 	
 	
@@ -380,16 +376,12 @@
 ></p>
 <h2 id="matlab实现">Matlab实现</h2>
 <p>用matlab实现该算法，其中结构体数组poplist为open表储存了扩展的节点。candidate为当前节点情况下的最少候选数空位的候选数，index为节点索引。</p>
-<p><img src="/post/heuristically-search/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png"
-	width="259"
-	height="261"
-	srcset="/post/heuristically-search/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_huf140ffb80bac1ea365ebff119a5eaa42_9230_480x0_resize_box_3.png 480w, /post/heuristically-search/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_huf140ffb80bac1ea365ebff119a5eaa42_9230_1024x0_resize_box_3.png 1024w"
+<p><img src="https://cdn.jsdelivr.net/gh/Oddyti/Resources/picgo-img/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png"
+	
+	
+	
 	loading="lazy"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="99"
-		data-flex-basis="238px"
 	
 ></p>
 <p>代码结构：</p>
@@ -626,42 +618,30 @@
 </div>
 </div><h2 id="结果">结果</h2>
 <p>作业中数独问题比较简单，迭代52次，不需要回溯，结果如下：</p>
-<p><img src="/post/heuristically-search/%E7%BB%93%E6%9E%9C.png"
-	width="470"
-	height="443"
-	srcset="/post/heuristically-search/%E7%BB%93%E6%9E%9C_hub4727b3c8a8162d81c658a99a1841895_14542_480x0_resize_box_3.png 480w, /post/heuristically-search/%E7%BB%93%E6%9E%9C_hub4727b3c8a8162d81c658a99a1841895_14542_1024x0_resize_box_3.png 1024w"
+<p><img src="https://cdn.jsdelivr.net/gh/Oddyti/Resources/picgo-img/%E7%BB%93%E6%9E%9C.png"
+	
+	
+	
 	loading="lazy"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="106"
-		data-flex-basis="254px"
 	
 ></p>
 <p>后测试了难度更大的数独问题。</p>
-<p><img src="/post/heuristically-search/sokudu2.png"
-	width="533"
-	height="434"
-	srcset="/post/heuristically-search/sokudu2_hucc80324e6792f4ab6893678e64e93722_8140_480x0_resize_box_3.png 480w, /post/heuristically-search/sokudu2_hucc80324e6792f4ab6893678e64e93722_8140_1024x0_resize_box_3.png 1024w"
+<p><img src="https://cdn.jsdelivr.net/gh/Oddyti/Resources/picgo-img/sokudu2.png"
+	
+	
+	
 	loading="lazy"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="122"
-		data-flex-basis="294px"
 	
 ></p>
 <p>共迭代1439次，结果如下：</p>
-<p><img src="/post/heuristically-search/sokudu2%E7%BB%93%E6%9E%9C.png"
-	width="533"
-	height="434"
-	srcset="/post/heuristically-search/sokudu2%E7%BB%93%E6%9E%9C_huf63c8a50c905488abac398e40a3cfab8_11965_480x0_resize_box_3.png 480w, /post/heuristically-search/sokudu2%E7%BB%93%E6%9E%9C_huf63c8a50c905488abac398e40a3cfab8_11965_1024x0_resize_box_3.png 1024w"
+<p><img src="https://cdn.jsdelivr.net/gh/Oddyti/Resources/picgo-img/sokudu2%E7%BB%93%E6%9E%9C.png"
+	
+	
+	
 	loading="lazy"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="122"
-		data-flex-basis="294px"
 	
 ></p>
 <h2 id="参考">参考</h2>

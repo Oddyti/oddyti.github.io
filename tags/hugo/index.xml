@@ -46,16 +46,12 @@
 &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;修改Github Pages设置，将&lt;code&gt;Build and deployment&lt;/code&gt;的分支修改为&lt;code&gt;deploy&lt;/code&gt;分支。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://oddyti.com/post/hugo-problems/Github-Pages.png&#34;
-	width=&#34;1076&#34;
-	height=&#34;437&#34;
-	srcset=&#34;https://oddyti.com/post/hugo-problems/Github-Pages_hu49859898b60ebae6f2f3671ad891e7ac_39258_480x0_resize_box_3.png 480w, https://oddyti.com/post/hugo-problems/Github-Pages_hu49859898b60ebae6f2f3671ad891e7ac_39258_1024x0_resize_box_3.png 1024w&#34;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Oddyti/Resources/picgo-img/Github-Pages.png&#34;
+	
+	
+	
 	loading=&#34;lazy&#34;
 	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;246&#34;
-		data-flex-basis=&#34;590px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;/li&gt;
