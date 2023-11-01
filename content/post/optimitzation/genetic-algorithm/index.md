@@ -21,7 +21,7 @@ $$
 
 算法基本流程资料已经很多了，这里贴一个课程PPT里的图：
 
-<img src="GA流程图.png" alt="GA流程图" style="zoom: 33%;" />
+<img src="https://cdn.jsdelivr.net/gh/Oddyti/Resources/picgo-img/GA%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt="GA流程图" style="zoom: 33%;" />
 
 ### 编码
 
