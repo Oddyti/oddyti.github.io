@@ -11,7 +11,7 @@ image = 'cover.jpg'
 
 # 4399，yyds
 
-![](4399.gif)
+![](https://cdn.jsdelivr.net/gh/Oddyti/Resources/picgo-img4399.gif)
 
 
 >咱先不说4399里的游戏来源是否合法，但它的确是满满地装着同年的许许多多的美好回忆。
