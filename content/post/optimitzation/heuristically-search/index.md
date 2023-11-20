@@ -16,7 +16,7 @@ image = ''
 
 最优化理论与算法课程上留了一道作业题，用启发式搜索算法求解数独问题。数独如下。
 
-![](https://cdn.jsdelivr.net/gh/Oddyti/Resources/picgo-img/sokudu.png)
+![](https://raw.githubusercontent.com/Oddyti/Resources/main/picgo-img/sokudu.png)
 
 ## 算法思路
 
@@ -26,13 +26,13 @@ image = ''
 
 算法流程图如下：
 
-![](https://cdn.jsdelivr.net/gh/Oddyti/Resources/picgo-img/sokudu%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B%E5%9B%BE.svg)
+![](https://raw.githubusercontent.com/Oddyti/Resources/main/picgo-img/sokudu%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B%E5%9B%BE.svg)
 
 ## Matlab实现
 
 用matlab实现该算法，其中结构体数组poplist为open表储存了扩展的节点。candidate为当前节点情况下的最少候选数空位的候选数，index为节点索引。
 
-![](https://cdn.jsdelivr.net/gh/Oddyti/Resources/picgo-img/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png)
+![](https://raw.githubusercontent.com/Oddyti/Resources/main/picgo-img/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png)
 
 代码结构：
 
@@ -163,15 +163,15 @@ end
 
 作业中数独问题比较简单，迭代52次，不需要回溯，结果如下：
 
-![](https://cdn.jsdelivr.net/gh/Oddyti/Resources/picgo-img/%E7%BB%93%E6%9E%9C.png)
+![](https://raw.githubusercontent.com/Oddyti/Resources/main/picgo-img/%E7%BB%93%E6%9E%9C.png)
 
 后测试了难度更大的数独问题。
 
-![](https://cdn.jsdelivr.net/gh/Oddyti/Resources/picgo-img/sokudu2.png)
+![](https://raw.githubusercontent.com/Oddyti/Resources/main/picgo-img/sokudu2.png)
 
 共迭代1439次，结果如下：
 
-![](https://cdn.jsdelivr.net/gh/Oddyti/Resources/picgo-img/sokudu2%E7%BB%93%E6%9E%9C.png)
+![](https://raw.githubusercontent.com/Oddyti/Resources/main/picgo-img/sokudu2%E7%BB%93%E6%9E%9C.png)
 
 ## 参考
 

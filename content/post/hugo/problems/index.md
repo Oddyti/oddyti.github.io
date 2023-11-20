@@ -37,7 +37,7 @@ image = 'cover.jpg'
 
 2. 修改Github Pages设置，将`Build and deployment`的分支修改为`deploy`分支。
 
-   ![](https://cdn.jsdelivr.net/gh/Oddyti/Resources/picgo-img/Github-Pages.png)
+   ![](https://raw.githubusercontent.com/Oddyti/Resources/main/picgo-img/Github-Pages.png)
 
 
 ## Github Action实现自动化部署后域名绑定丢失

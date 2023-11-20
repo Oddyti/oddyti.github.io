@@ -29,7 +29,7 @@ $$
 
 流程图直接放一张PPT的流程图：
 
-<img src="https://cdn.jsdelivr.net/gh/Oddyti/Resources/picgo-img/%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt="退火算法流程图" style="zoom:90%;" />
+<img src="https://raw.githubusercontent.com/Oddyti/Resources/main/picgo-img/%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt="退火算法流程图" style="zoom:90%;" />
 
 ### 初始化
 
