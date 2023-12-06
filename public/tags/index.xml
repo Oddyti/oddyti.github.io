@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Oddyti</copyright>
-        <lastBuildDate>Tue, 31 Oct 2023 22:40:13 +0800</lastBuildDate><atom:link href="https://oddyti.com/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 06 Dec 2023 22:57:11 +0800</lastBuildDate><atom:link href="https://oddyti.com/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>JavaScript</title>
+        <link>https://oddyti.com/tags/javascript/</link>
+        <pubDate>Wed, 06 Dec 2023 22:57:11 +0800</pubDate>
+        
+        <guid>https://oddyti.com/tags/javascript/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>windows</title>
         <link>https://oddyti.com/tags/windows/</link>
         <pubDate>Tue, 31 Oct 2023 22:40:13 +0800</pubDate>
