@@ -105,8 +105,10 @@
   code,
   kbd,
   samp {
-    font-family: monospace, monospace; /* 1 */
+    font-family: var(--code-font-family), monospace; /* 1 */
     font-size: 1em; /* 2 */
+    border: solid 1px #e8eaed;
+    margin: 0 2px;
   }
   
   /**
