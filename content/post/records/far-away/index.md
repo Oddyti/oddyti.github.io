@@ -7,6 +7,7 @@ slug = 'far-away'
 tags = ['生活']
 categories = ['随记']
 image = 'cover.jpg'
+license = false
 +++
 
 >高中某个假期，乘车回平武。从天亮到天黑，延山路前行。

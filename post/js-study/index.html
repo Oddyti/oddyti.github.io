@@ -315,6 +315,7 @@
         <li><a href="#对象的字面量">对象的字面量</a></li>
         <li><a href="#枚举对象属性">枚举对象属性</a></li>
         <li><a href="#对象的变量类型">对象的变量类型</a></li>
+        <li><a href="#垃圾回收-garbage-collection">垃圾回收 Garbage Collection</a></li>
       </ol>
     </li>
     <li><a href="#函数">函数</a>
@@ -464,6 +465,7 @@
         <li><a href="#正则表达式对象">正则表达式（对象）</a>
           <ol>
             <li><a href="#正则表达式语法">正则表达式语法</a></li>
+            <li><a href="#字符串的正则方法">字符串的正则方法</a></li>
           </ol>
         </li>
       </ol>
@@ -1153,6 +1155,9 @@
 	
 	
 ></p>
+<h3 id="垃圾回收-garbage-collection">垃圾回收 Garbage Collection</h3>
+<p>垃圾：没有任何变量对其进行饮用的对象称为垃圾</p>
+<p>JS中有自动垃圾回收机制，这些对象回被解释器回收，无需手动处理</p>
 <h2 id="函数">函数</h2>
 <p><strong>函数也是一个对象</strong></p>
 <h3 id="函数对象的创建与参数传递">函数对象的创建与参数传递</h3>
@@ -3617,7 +3622,43 @@
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div>
+</div><h4 id="字符串的正则方法">字符串的正则方法</h4>
+<ul>
+<li><code>split()</code>
+<ul>
+<li>可以根据正则表达来对字符串进行拆分</li>
+<li>传入正则表达式</li>
+<li>返回数组</li>
+</ul>
+</li>
+<li><code>search()</code>
+<ul>
+<li>搜索符合正则表达式的内容第一次出现的索引</li>
+</ul>
+</li>
+<li><code>replace()</code>
+<ul>
+<li>根据正则表达式替换符合的内容</li>
+<li>正则表达式加<code>/g</code>以替换所有</li>
+</ul>
+</li>
+<li><code>match()</code>
+<ul>
+<li>根据正则表达式匹配符合的内容</li>
+<li>正则表达式加<code>/g</code>以匹配所有</li>
+<li>返回符合的字符串</li>
+<li>不支持分组</li>
+</ul>
+</li>
+<li><code>matchAll()</code>
+<ul>
+<li>匹配所有</li>
+<li>必须加<code>/g</code></li>
+<li>返回迭代器，需要遍历取出结果</li>
+</ul>
+</li>
+</ul>
+
 </section>
 
 
@@ -3630,18 +3671,6 @@
     </section>
 
 
-    
-    <section class="article-copyright">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
-</svg>
-
-
-
-        <span>Licensed under CC BY-NC-SA 4.0</span>
-    </section>
     </footer>
 
 
@@ -3680,6 +3709,19 @@
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/dom-study/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">DOM学习记录</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="">

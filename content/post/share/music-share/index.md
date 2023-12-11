@@ -7,6 +7,7 @@ slug = 'music-share'
 tags = ['音乐']
 categories = ['分享']
 image = ''
+license = false
 +++
 
 ## 001 Song F - 达达

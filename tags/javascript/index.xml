@@ -603,6 +603,9 @@
 	
 	
 &gt;&lt;/p&gt;
+&lt;h3 id=&#34;垃圾回收-garbage-collection&#34;&gt;垃圾回收 Garbage Collection&lt;/h3&gt;
+&lt;p&gt;垃圾：没有任何变量对其进行饮用的对象称为垃圾&lt;/p&gt;
+&lt;p&gt;JS中有自动垃圾回收机制，这些对象回被解释器回收，无需手动处理&lt;/p&gt;
 &lt;h2 id=&#34;函数&#34;&gt;函数&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;函数也是一个对象&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id=&#34;函数对象的创建与参数传递&#34;&gt;函数对象的创建与参数传递&lt;/h3&gt;
@@ -3067,7 +3070,43 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;&lt;h4 id=&#34;字符串的正则方法&#34;&gt;字符串的正则方法&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;split()&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;可以根据正则表达来对字符串进行拆分&lt;/li&gt;
+&lt;li&gt;传入正则表达式&lt;/li&gt;
+&lt;li&gt;返回数组&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;search()&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;搜索符合正则表达式的内容第一次出现的索引&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;replace()&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;根据正则表达式替换符合的内容&lt;/li&gt;
+&lt;li&gt;正则表达式加&lt;code&gt;/g&lt;/code&gt;以替换所有&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;match()&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;根据正则表达式匹配符合的内容&lt;/li&gt;
+&lt;li&gt;正则表达式加&lt;code&gt;/g&lt;/code&gt;以匹配所有&lt;/li&gt;
+&lt;li&gt;返回符合的字符串&lt;/li&gt;
+&lt;li&gt;不支持分组&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;matchAll()&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;匹配所有&lt;/li&gt;
+&lt;li&gt;必须加&lt;code&gt;/g&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;返回迭代器，需要遍历取出结果&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
         </item>
         
     </channel>

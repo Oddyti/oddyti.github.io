@@ -7,6 +7,7 @@ slug = 'high-school-memories'
 tags = ['回忆']
 categories = ['随记']
 image = ''
+license = false
 +++
 
 ## 一
