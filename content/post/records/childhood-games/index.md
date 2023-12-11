@@ -7,6 +7,7 @@ slug = 'child-hood-games'
 tags = ['回忆']
 categories = ['随记']
 image = 'cover.jpg'
+license = false
 +++
 
 # 4399，yyds

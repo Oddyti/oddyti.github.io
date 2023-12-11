@@ -7,6 +7,7 @@ slug = 'js-study'
 tags = ['JavaScript']
 categories = ['学习记录']
 image = 'JS.png'
+license = false
 +++
 
 ## 散点
@@ -456,6 +457,12 @@ for (let propName in obj){
 **如果有两个变量同时指向同一个对象，那么如果通过一个变量修改对象，另一个变量也会改变**
 
 ![image-20231203172547032](https://raw.githubusercontent.com/Oddyti/Resources/main/picgo-img/image-20231203172547032.png)
+
+### 垃圾回收 Garbage Collection
+
+垃圾：没有任何变量对其进行饮用的对象称为垃圾
+
+JS中有自动垃圾回收机制，这些对象回被解释器回收，无需手动处理
 
 ## 函数
 
@@ -2075,4 +2082,25 @@ while(res2){
     res2 = reg.exec(str);
 };
 ```
+
+#### 字符串的正则方法
+
++ `split()`
+  + 可以根据正则表达来对字符串进行拆分
+  + 传入正则表达式
+  + 返回数组
++ `search()`
+  + 搜索符合正则表达式的内容第一次出现的索引
++ `replace()`
+  + 根据正则表达式替换符合的内容
+  + 正则表达式加`/g`以替换所有
++ `match()`
+  + 根据正则表达式匹配符合的内容
+  + 正则表达式加`/g`以匹配所有
+  + 返回符合的字符串
+  + 不支持分组
++ `matchAll()`
+  + 匹配所有
+  + 必须加`/g`
+  + 返回迭代器，需要遍历取出结果
 

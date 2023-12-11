@@ -2,6 +2,9 @@
 title: '友链'
 layout: links
 slug: links
+license: false
+comments: false
+readingTime: false
 links:
 
   - title: Anomie

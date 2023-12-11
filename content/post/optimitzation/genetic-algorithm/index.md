@@ -7,6 +7,7 @@ slug = 'genetic-algorithm'
 tags = ['最优化算法']
 categories = ['学习记录']
 image = ''
+license = false
 
 +++
 

@@ -7,6 +7,7 @@ slug = 'hugo-problems'
 tags = ['Hugo']
 categories = ['学习记录']
 image = 'cover.jpg'
+license = false
 +++
 
 ## Github仓库双分支分别存放源代码和部署后的代码
