@@ -20,8 +20,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/2.0.2/sha256.js"></script>
     </head>
     <body class="">
-        <script src = "https://oddyti.com/js/bg.js"></script>
-        <canvas id="my-canvas" style="z-index: -1;position: fixed;"></canvas>
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -622,13 +620,5 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&family=Long+Cang&family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@300&family=Noto+Serif+SC:wght@300&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
 
         
-        <script>
-            function confetti_start(size, can_rotete) {
-                let confettiSettings = { target: 'my-canvas', size: size, rotate: can_rotete };
-                let confetti = new ConfettiGenerator(confettiSettings);
-                confetti.render();
-            }
-            confetti_start(2, true);
-        </script>
     </body>
 </html>

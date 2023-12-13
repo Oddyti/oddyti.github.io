@@ -23,8 +23,6 @@
     <body class="
     article-page
     ">
-        <script src = "https://oddyti.com/js/bg.js"></script>
-        <canvas id="my-canvas" style="z-index: -1;position: fixed;"></canvas>
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -680,13 +678,5 @@
             integrity="sha256-nehvLmtcjMs&#43;jZxAWTFt8Mxrqd8mxyYSOo987Z8roBI="
         ></script>
         
-        <script>
-            function confetti_start(size, can_rotete) {
-                let confettiSettings = { target: 'my-canvas', size: size, rotate: can_rotete };
-                let confetti = new ConfettiGenerator(confettiSettings);
-                confetti.render();
-            }
-            confetti_start(2, true);
-        </script>
     </body>
 </html>
