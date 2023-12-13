@@ -9,6 +9,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/2.0.2/sha256.js"></script>
     </head>
     <body class="{{ block `body-class` . }}{{ end }}">
+        <script src = "{{ .Site.BaseURL }}js/bg.js"></script>
+        <canvas id="my-canvas" style="z-index: -1;position: fixed;"></canvas>
         {{- partial "head/colorScheme" . -}}
 
         {{/* The container is wider when there's any activated widget */}}
@@ -37,5 +39,13 @@
             integrity="{{ $draftJs.Data.Integrity }}"
         ></script>
         {{ end }}
+        <script>
+            function confetti_start(size, can_rotete) {
+                let confettiSettings = { target: 'my-canvas', size: size, rotate: can_rotete };
+                let confetti = new ConfettiGenerator(confettiSettings);
+                confetti.render();
+            }
+            confetti_start(2, true);
+        </script>
     </body>
 </html>
