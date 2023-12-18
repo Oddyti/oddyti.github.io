@@ -8,6 +8,7 @@ tags = ['音乐']
 categories = ['分享']
 image = ''
 license = false
+weight = 1
 +++
 
 这是一期个人向的歌曲推荐视频（希望能有第二期

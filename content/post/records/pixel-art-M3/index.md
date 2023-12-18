@@ -8,6 +8,7 @@ tags = ['像素画']
 categories = ['兴趣']
 image = 'bmw-m3_2.png'
 license = false
+weight = 2
 +++
 
 像素画新人，第三次像素画尝试，画童年喜欢玩的极品飞车9的经典主角座驾，怀念下这款神作。

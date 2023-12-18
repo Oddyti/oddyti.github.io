@@ -1,5 +1,5 @@
 +++
-title = '音乐推荐'
+title = '音乐推荐计划合集'
 date = 2021-07-06T10:41:22+08:00
 draft = false
 description = '希望能拯救歌慌'
@@ -8,6 +8,7 @@ tags = ['音乐']
 categories = ['分享']
 image = ''
 license = false
+weight = 1
 +++
 
 ## 001 Song F - 达达
