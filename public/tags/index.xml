@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Oddyti</copyright>
-        <lastBuildDate>Mon, 11 Dec 2023 13:42:37 +0800</lastBuildDate><atom:link href="https://oddyti.com/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 01 Jan 2024 15:51:57 +0800</lastBuildDate><atom:link href="https://oddyti.com/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>音乐</title>
+        <link>https://oddyti.com/tags/%E9%9F%B3%E4%B9%90/</link>
+        <pubDate>Mon, 01 Jan 2024 15:51:57 +0800</pubDate>
+        
+        <guid>https://oddyti.com/tags/%E9%9F%B3%E4%B9%90/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>DOM</title>
         <link>https://oddyti.com/tags/dom/</link>
         <pubDate>Mon, 11 Dec 2023 13:42:37 +0800</pubDate>
@@ -61,14 +69,6 @@
         <pubDate>Thu, 11 May 2023 20:21:50 +0800</pubDate>
         
         <guid>https://oddyti.com/tags/%E5%83%8F%E7%B4%A0%E7%94%BB/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>音乐</title>
-        <link>https://oddyti.com/tags/%E9%9F%B3%E4%B9%90/</link>
-        <pubDate>Fri, 31 Mar 2023 21:16:48 +0800</pubDate>
-        
-        <guid>https://oddyti.com/tags/%E9%9F%B3%E4%B9%90/</guid>
         <description></description>
         </item>
         <item>
