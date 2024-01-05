@@ -4,11 +4,11 @@ date = 2023-03-23T10:19:58+08:00
 draft = false
 description = '这是一期个人向的歌曲推荐视频。'
 slug = 'music-share-01'
-tags = ['音乐']
+tags = ['音乐','安利']
 categories = ['分享']
 image = ''
 license = false
-weight = 1
+weight = ''
 +++
 
 这是一期个人向的歌曲推荐视频（希望能有第二期
