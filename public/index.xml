@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oddyti的小站</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Oddyti的小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Oddyti</copyright>
+    <lastBuildDate>Fri, 26 Jan 2024 21:20:28 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>歌荒拯救计划 | 个人向推歌 - 第二期</title>
+      <link>http://localhost:1313/post/music-share-02/</link>
+      <pubDate>Fri, 31 Mar 2023 21:16:48 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/music-share-02/</guid>
+      <description>个人向的歌曲推荐视频——第二期！（希望能有第三期，具体初衷可以看看第一期 本期更新：优化了排版，增加了字幕 每期一共十首音乐，包含的风格很多，由</description>
+    </item>
+    
+    <item>
+      <title>记录一次像素画尝试：BMW M3 E46</title>
+      <link>http://localhost:1313/post/pixel-art-m3/</link>
+      <pubDate>Thu, 11 May 2023 20:21:50 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/pixel-art-m3/</guid>
+      <description>像素画新人，第三次像素画尝试，画童年喜欢玩的极品飞车9的经典主角座驾，怀念下这款神作。 初学像素画，如有不足欢迎指教！ 原图链接: https://pan.baidu.com/s/1UtJbPQbqzzR7qwo5N9mz5w?pwd=bwqp 提取码: bwqp</description>
+    </item>
+    
+    <item>
+      <title>午潮山初游</title>
+      <link>http://localhost:1313/post/wuchao/</link>
+      <pubDate>Fri, 26 Jan 2024 21:20:28 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/wuchao/</guid>
+      <description>初游午潮山 很好的路线，使我双腿颤抖，爱来自Oddyti 很早之前偶然间看到附近午潮山路线的照片，山顶的照片，登高望远感觉非常棒，所以很早就萌生</description>
+    </item>
+    
+    <item>
+      <title>知乎-趣味/思考/学习-回答收录</title>
+      <link>http://localhost:1313/post/zhihu/</link>
+      <pubDate>Thu, 18 Jan 2024 16:49:04 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/zhihu/</guid>
+      <description>学习类 一些忽视的科学道理，值得学习的回答 程序员容易发音错误的单词 计算机中的「null」怎么读？ - 钟千煅的回答 - 知乎 https://www.zhihu.com/question/549740924/answer/3363077599 常见的一些厨艺原理 为什么</description>
+    </item>
+    
+    <item>
+      <title>《怎样欣赏音乐》读后感 - 谈谈听音乐的历程</title>
+      <link>http://localhost:1313/post/listen-music/</link>
+      <pubDate>Fri, 05 Jan 2024 16:34:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/listen-music/</guid>
+      <description>《怎样欣赏音乐》（What to Listen For in Music）是美国作曲家艾伦·科普兰的1939年的著作，是作者基于其1936到1937年的音乐知识讲座而写</description>
+    </item>
+    
+    <item>
+      <title>借2023年网易云四季最爱回顾推荐四首音乐</title>
+      <link>http://localhost:1313/post/music-2023/</link>
+      <pubDate>Mon, 01 Jan 2024 15:51:57 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/music-2023/</guid>
+      <description>前几天网易云推送了今年的年度总结，其中有一个的四个季节最爱听的音乐感觉是最能触动我的。一直以来，往往我一首歌我会往复地听一段时间，而这个时间</description>
+    </item>
+    
+    <item>
+      <title>DOM学习记录</title>
+      <link>http://localhost:1313/post/dom-study/</link>
+      <pubDate>Mon, 11 Dec 2023 13:42:37 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/dom-study/</guid>
+      <description>DOM(Document Object Model) DOM将网页所有内容都转换成了对象 Model表示对象之间的关系，如父子、后代等 网页中的每个对象都是一个节点(Node) document</description>
+    </item>
+    
+    <item>
+      <title>JavaScript学习记录</title>
+      <link>http://localhost:1313/post/js-study/</link>
+      <pubDate>Wed, 06 Dec 2023 22:57:11 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/js-study/</guid>
+      <description>散点 script type默认javascript 不要用自闭合标签 JS框架 jQuery: 实质是方法库 Angular: 模块化开发 React: 虚拟DOM Vue: 综合了Angular和React的优点</description>
+    </item>
+    
+    <item>
+      <title>Windows软件分享/新系统配置清单</title>
+      <link>http://localhost:1313/post/apps-share/</link>
+      <pubDate>Tue, 31 Oct 2023 22:40:13 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/apps-share/</guid>
+      <description>浏览器 - Edge Win11自带。 Office全家桶 无须解释。 QQ 无须解释。 微信 无须解释。 卸载软件 - Geek Uninstaller - the best FREE uninstaller 免费，一个非常小巧的卸载软件的软件，</description>
+    </item>
+    
+    <item>
+      <title>最优化理论算法：模拟退火算法寻找函数最值Matlab实现</title>
+      <link>http://localhost:1313/post/simulated-annealing/</link>
+      <pubDate>Mon, 30 Oct 2023 14:44:26 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/simulated-annealing/</guid>
+      <description>问题 最优化理论与算法课程作业题，用遗传算法求解如下问题： $$ max \quad f(x) = x \cdot sin(3x) , -1 \le x \le 30 $$ 算法思路 退火算法具体思路可以理解为晚上喝醉后爬山，目标</description>
+    </item>
+    
+    <item>
+      <title>最优化理论算法：遗传算法寻找函数最值Matlab实现</title>
+      <link>http://localhost:1313/post/genetic-algorithm/</link>
+      <pubDate>Mon, 30 Oct 2023 14:43:47 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/genetic-algorithm/</guid>
+      <description>问题 最优化理论与算法课程作业题，用遗传算法求解如下问题： $$ max \quad f(x) = x \cdot sin(3x) , -1 \le x \le 30 $$ 算法思路 算法基本流程资料已经很多了，这里贴一个课程PP</description>
+    </item>
+    
+    <item>
+      <title>最优化理论算法：用启发式搜索求解数独问题Matlab实现</title>
+      <link>http://localhost:1313/post/heuristically-search/</link>
+      <pubDate>Mon, 30 Oct 2023 13:52:38 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/heuristically-search/</guid>
+      <description>问题 最优化理论与算法课程上留了一道作业题，用启发式搜索算法求解数独问题。数独如下。 算法思路 基础算法上采用深度优先搜索，即找到一个空位就填入一</description>
+    </item>
+    
+    <item>
+      <title>Hugo（Stack主题）博客搭建过程中踩过的坑</title>
+      <link>http://localhost:1313/post/hugo-problems/</link>
+      <pubDate>Sun, 29 Oct 2023 15:46:19 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/hugo-problems/</guid>
+      <description>Github仓库双分支分别存放源代码和部署后的代码 最开始我是按照网上的教程将Hugo源代码仓库存放在Github仓库中，并且通过Github</description>
+    </item>
+    
+    <item>
+      <title>黑暗之魂3击败米宝记录</title>
+      <link>http://localhost:1313/post/game-ds3/</link>
+      <pubDate>Tue, 15 Aug 2023 23:46:23 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/game-ds3/</guid>
+      <description>黑魂萌新，已经被米狄尔虐傻了，随义哥哥视频也看了，米狄尔的出招视频也看了，前前后后自己没有捏余火（舍不得）尝试了十多二十次吧，也找过下血本（</description>
+    </item>
+    
+    <item>
+      <title>歌荒拯救计划 | 个人向推歌 - 第一期</title>
+      <link>http://localhost:1313/post/music-share-01/</link>
+      <pubDate>Thu, 23 Mar 2023 10:19:58 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/music-share-01/</guid>
+      <description>这是一期个人向的歌曲推荐视频（希望能有第二期 自己现在饱受歌荒困扰，但是自己的歌单这些年里也囤了许多歌，于是便想精选出一些歌曲，希望能抛砖引玉</description>
+    </item>
+    
+    <item>
+      <title>音乐推荐计划合集</title>
+      <link>http://localhost:1313/post/music-share/</link>
+      <pubDate>Tue, 06 Jul 2021 10:41:22 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/music-share/</guid>
+      <description>001 Song F - 达达 日推到了达达乐队的Song F，其实之前看乐队的夏天的时候有听过这首歌的，但是那时候无感，考试周被推到，就突然喜欢了起来。 给我的感</description>
+    </item>
+    
+    <item>
+      <title>那些陪我长大的游戏</title>
+      <link>http://localhost:1313/post/child-hood-games/</link>
+      <pubDate>Sat, 30 Jan 2021 17:04:30 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/child-hood-games/</guid>
+      <description>4399，yyds 咱先不说4399里的游戏来源是否合法，但它的确是满满地装着同年的许许多多的美好回忆。 第一次接触4399，是去了平武时候，去</description>
+    </item>
+    
+    <item>
+      <title>Archives</title>
+      <link>http://localhost:1313/archives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/archives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search</title>
+      <link>http://localhost:1313/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/search/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>友链</title>
+      <link>http://localhost:1313/links/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/links/</guid>
+      <description>朋友们</description>
+    </item>
+    
+  </channel>
+</rss>
