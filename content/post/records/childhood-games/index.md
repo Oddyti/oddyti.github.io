@@ -5,7 +5,7 @@ draft = false
 description = '记录记录从小玩大的游戏'
 slug = 'child-hood-games'
 tags = ['回忆']
-categories = ['随记']
+categories = ['游戏']
 image = 'cover.jpg'
 license = false
 +++
