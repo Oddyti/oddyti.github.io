@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Oddyti</copyright>
-        <lastBuildDate>Fri, 26 Jan 2024 21:20:28 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 13 Sep 2024 22:53:35 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>黑神话：悟空</title>
+        <link>http://localhost:1313/tags/%E9%BB%91%E7%A5%9E%E8%AF%9D%E6%82%9F%E7%A9%BA/</link>
+        <pubDate>Fri, 13 Sep 2024 22:53:35 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tags/%E9%BB%91%E7%A5%9E%E8%AF%9D%E6%82%9F%E7%A9%BA/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>游山玩水</title>
         <link>http://localhost:1313/tags/%E6%B8%B8%E5%B1%B1%E7%8E%A9%E6%B0%B4/</link>
         <pubDate>Fri, 26 Jan 2024 21:20:28 +0800</pubDate>
@@ -104,9 +112,25 @@
         <description></description>
         </item>
         <item>
+        <title>电影</title>
+        <link>http://localhost:1313/tags/%E7%94%B5%E5%BD%B1/</link>
+        <pubDate>Tue, 13 Sep 2022 20:37:52 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tags/%E7%94%B5%E5%BD%B1/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>生活</title>
+        <link>http://localhost:1313/tags/%E7%94%9F%E6%B4%BB/</link>
+        <pubDate>Tue, 06 Apr 2021 15:16:53 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tags/%E7%94%9F%E6%B4%BB/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>回忆</title>
         <link>http://localhost:1313/tags/%E5%9B%9E%E5%BF%86/</link>
-        <pubDate>Sat, 30 Jan 2021 17:04:30 +0800</pubDate>
+        <pubDate>Sun, 21 Mar 2021 14:25:49 +0800</pubDate>
         
         <guid>http://localhost:1313/tags/%E5%9B%9E%E5%BF%86/</guid>
         <description></description>

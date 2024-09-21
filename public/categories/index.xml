@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Oddyti</copyright>
-        <lastBuildDate>Fri, 26 Jan 2024 21:20:28 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 13 Sep 2024 22:53:35 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>游戏</title>
+        <link>http://localhost:1313/categories/%E6%B8%B8%E6%88%8F/</link>
+        <pubDate>Fri, 13 Sep 2024 22:53:35 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/%E6%B8%B8%E6%88%8F/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>记录</title>
         <link>http://localhost:1313/categories/%E8%AE%B0%E5%BD%95/</link>
         <pubDate>Fri, 26 Jan 2024 21:20:28 +0800</pubDate>
@@ -32,14 +40,6 @@
         <description></description>
         </item>
         <item>
-        <title>游戏</title>
-        <link>http://localhost:1313/categories/%E6%B8%B8%E6%88%8F/</link>
-        <pubDate>Tue, 15 Aug 2023 23:46:23 +0800</pubDate>
-        
-        <guid>http://localhost:1313/categories/%E6%B8%B8%E6%88%8F/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>兴趣</title>
         <link>http://localhost:1313/categories/%E5%85%B4%E8%B6%A3/</link>
         <pubDate>Thu, 11 May 2023 20:21:50 +0800</pubDate>
@@ -50,7 +50,7 @@
         <item>
         <title>随记</title>
         <link>http://localhost:1313/categories/%E9%9A%8F%E8%AE%B0/</link>
-        <pubDate>Sat, 30 Jan 2021 17:04:30 +0800</pubDate>
+        <pubDate>Tue, 06 Apr 2021 15:16:53 +0800</pubDate>
         
         <guid>http://localhost:1313/categories/%E9%9A%8F%E8%AE%B0/</guid>
         <description></description>
