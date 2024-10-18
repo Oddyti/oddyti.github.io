@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Oddyti</copyright>
-        <lastBuildDate>Sun, 06 Oct 2024 22:00:18 +0800</lastBuildDate><atom:link href="https://oddyti.com/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 18 Oct 2024 09:57:44 +0800</lastBuildDate><atom:link href="https://oddyti.com/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>焦点</title>
+        <link>https://oddyti.com/categories/%E7%84%A6%E7%82%B9/</link>
+        <pubDate>Fri, 18 Oct 2024 09:57:44 +0800</pubDate>
+        
+        <guid>https://oddyti.com/categories/%E7%84%A6%E7%82%B9/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>随记</title>
         <link>https://oddyti.com/categories/%E9%9A%8F%E8%AE%B0/</link>
         <pubDate>Sun, 06 Oct 2024 22:00:18 +0800</pubDate>
