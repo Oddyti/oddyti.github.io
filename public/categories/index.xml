@@ -7,12 +7,28 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Oddyti</copyright>
-        <lastBuildDate>Sat, 21 Sep 2024 10:41:40 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>电影</title>
-        <link>http://localhost:1313/categories/%E7%94%B5%E5%BD%B1/</link>
+        <lastBuildDate>Fri, 18 Oct 2024 09:57:44 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>焦点</title>
+        <link>http://localhost:1313/categories/%E7%84%A6%E7%82%B9/</link>
+        <pubDate>Fri, 18 Oct 2024 09:57:44 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/%E7%84%A6%E7%82%B9/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>随记</title>
+        <link>http://localhost:1313/categories/%E9%9A%8F%E8%AE%B0/</link>
+        <pubDate>Sun, 06 Oct 2024 22:00:18 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/%E9%9A%8F%E8%AE%B0/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>记录</title>
+        <link>http://localhost:1313/categories/%E8%AE%B0%E5%BD%95/</link>
         <pubDate>Sat, 21 Sep 2024 10:41:40 +0800</pubDate>
         
-        <guid>http://localhost:1313/categories/%E7%94%B5%E5%BD%B1/</guid>
+        <guid>http://localhost:1313/categories/%E8%AE%B0%E5%BD%95/</guid>
         <description></description>
         </item>
         <item>
@@ -21,14 +37,6 @@
         <pubDate>Fri, 13 Sep 2024 22:53:35 +0800</pubDate>
         
         <guid>http://localhost:1313/categories/%E6%B8%B8%E6%88%8F/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>记录</title>
-        <link>http://localhost:1313/categories/%E8%AE%B0%E5%BD%95/</link>
-        <pubDate>Fri, 26 Jan 2024 21:20:28 +0800</pubDate>
-        
-        <guid>http://localhost:1313/categories/%E8%AE%B0%E5%BD%95/</guid>
         <description></description>
         </item>
         <item>
@@ -53,14 +61,6 @@
         <pubDate>Thu, 11 May 2023 20:21:50 +0800</pubDate>
         
         <guid>http://localhost:1313/categories/%E5%85%B4%E8%B6%A3/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>随记</title>
-        <link>http://localhost:1313/categories/%E9%9A%8F%E8%AE%B0/</link>
-        <pubDate>Tue, 06 Apr 2021 15:16:53 +0800</pubDate>
-        
-        <guid>http://localhost:1313/categories/%E9%9A%8F%E8%AE%B0/</guid>
         <description></description>
         </item>
         
