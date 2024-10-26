@@ -6,7 +6,7 @@ description = '专辑《牛窝坑之子》推荐'
 slug = 'niuwokeng'
 tags = ['音乐','安利']
 categories = ['分享']
-image = ''
+image = 'new.png'
 license = false
 
 +++
