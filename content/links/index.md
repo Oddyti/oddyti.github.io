@@ -3,7 +3,7 @@ title: '友链'
 layout: links
 slug: links
 license: false
-comments: false
+comments: true
 readingTime: false
 links:
 
