@@ -13,5 +13,3 @@ links:
     image: https://dong2000.xyz/wombo.png
 
 ---
-
-# 朋友们
