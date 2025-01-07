@@ -17,11 +17,11 @@
 &lt;h2 id=&#34;texlive安装&#34;&gt;TeXLive安装&lt;/h2&gt;
 &lt;h3 id=&#34;概念区分&#34;&gt;概念区分&lt;/h3&gt;
 &lt;p&gt;虽然已经使用LaTex写了许多实验报告和论文，但是对于这个大家族的许多概念名词有很多的混淆。所以先做一下概念区分（来源于GPT）&lt;/p&gt;
-&lt;h3 id=&#34;tex&#34;&gt;TeX&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;TeX&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;TeX 是一种由 Donald Knuth 开发的&lt;strong&gt;排版语言&lt;/strong&gt;，专门用于高质量的文字排版，尤其是数学公式和复杂文档。而Tex语言的文件后缀以.tex结尾，也是我们使用LaTex时文件的通用后缀。&lt;/p&gt;
-&lt;h3 id=&#34;latex&#34;&gt;LaTeX&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;LaTeX&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;LaTeX 是基于 TeX 的宏包（或称为扩展），由 Leslie Lamport 开发，旨在简化 TeX 的使用。可以理解成扩展后的TeX，其底层仍然是TeX语言，并且文件仍然以.tex结尾。&lt;/p&gt;
-&lt;h3 id=&#34;tex引擎&#34;&gt;TeX引擎&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;TeX引擎&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;TeX 引擎是实际执行 TeX 语言代码的程序，负责将 TeX 文件编译为输出文件（如 PDF、DVI）。&lt;/p&gt;
 &lt;p&gt;常见的TeX引擎有：&lt;/p&gt;
 &lt;ul&gt;
@@ -29,7 +29,7 @@
 &lt;li&gt;&lt;code&gt;XeTeX&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;LuaTeX&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;tex编译器&#34;&gt;TeX编译器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;TeX编译器&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;TeX 编译器是指用于调用 TeX 引擎并编译 TeX 文件的工具或命令。&lt;/p&gt;
 &lt;p&gt;常见 TeX 编译器：&lt;/p&gt;
 &lt;ul&gt;
