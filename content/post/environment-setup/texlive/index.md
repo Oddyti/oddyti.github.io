@@ -13,7 +13,7 @@ license = false
 
 
 
-记录和介绍一下TeXLive+ VSCode 安装与环境配置过程（Windows）
+记录和介绍一下TeXLive + VSCode 安装与环境配置过程（Windows）
 
 ## TeXLive安装
 
