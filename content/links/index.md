@@ -12,4 +12,9 @@ links:
     website: https://dong2000.xyz
     image: https://dong2000.xyz/wombo.png
 
+  - title: 暄暄！
+    description: 咸鱼暄的代码空间
+    website: https://xuan-insr.github.io/
+    image: https://xuan-insr.github.io/logo.ico
+
 ---
