@@ -13,7 +13,7 @@
         <pubDate>Sun, 05 Jan 2025 13:36:19 +0800</pubDate>
         
         <guid>http://localhost:1313/post/texlive/</guid>
-        <description>&lt;p&gt;记录和介绍一下TeXLive+ VSCode 安装与环境配置过程（Windows）&lt;/p&gt;
+        <description>&lt;p&gt;记录和介绍一下TeXLive + VSCode 安装与环境配置过程（Windows）&lt;/p&gt;
 &lt;h2 id=&#34;texlive安装&#34;&gt;TeXLive安装&lt;/h2&gt;
 &lt;h3 id=&#34;概念区分&#34;&gt;概念区分&lt;/h3&gt;
 &lt;p&gt;虽然已经使用LaTex写了许多实验报告和论文，但是对于这个大家族的许多概念名词有很多的混淆。所以先做一下概念区分（来源于GPT）&lt;/p&gt;
