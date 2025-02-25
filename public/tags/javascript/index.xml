@@ -2613,8 +2613,7 @@
 &lt;/div&gt;&lt;h3 id=&#34;对象的序列化json&#34;&gt;对象的序列化JSON&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;JS的对象都是存在内存中&lt;/p&gt;
-&lt;p&gt;序列化是指将对象转化为一个可以存储的格式&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;序列化是指将对象转化为一个可以存储的格式&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;JS中对象的序列化通常是转换为字符串&lt;/p&gt;
 &lt;p&gt;对象序列化的用途：可以将字符串在不同语言之间传递&lt;/p&gt;
 &lt;p&gt;JS对象序列化&lt;/p&gt;
