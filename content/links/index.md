@@ -17,4 +17,9 @@ links:
     website: https://xuan-insr.github.io/
     image: https://xuan-insr.github.io/logo.ico
 
+  - title: 观昔望今
+    description: 一个个人小站
+    website: https://sci-tech.top/
+    image: https://sci-tech.top/images/logo.jpg
+
 ---
