@@ -30,6 +30,76 @@
     </item>
     
     <item>
+      <title>Java线程池(Thread Pool) - 一篇不太详细的解释</title>
+      <link>https://oddyti.com/post/thread-pool/</link>
+      <pubDate>Mon, 24 Feb 2025 21:14:04 +0800</pubDate>
+      
+      <guid>https://oddyti.com/post/thread-pool/</guid>
+      <description>&lt;h2 id=&#34;线程池&#34;&gt;线程池&lt;/h2&gt;
+&lt;p&gt;使用线程池的主要原因：&lt;strong&gt;控制并发数量&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;此外：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;线程池可以复用已经创建的线程，以降低资源消耗&lt;/li&gt;
+&lt;li&gt;可以对线程做统一管理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;threadpoolexecutor类&#34;&gt;&lt;code&gt;ThreadPoolExecutor&lt;/code&gt;类&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;ThreadPoolExecutor&lt;/code&gt;类是&lt;code&gt;Executor&lt;/code&gt;接口的实现类，&lt;code&gt;Executor&lt;/code&gt; 提供了一种标准的方式来运行任务（&lt;code&gt;Runnable&lt;/code&gt; 或 &lt;code&gt;Callable&lt;/code&gt;），而不需要手动创建和管理线程。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Java内存模型(JMM) - 一篇不太详细的解释</title>
+      <link>https://oddyti.com/post/jmm/</link>
+      <pubDate>Sat, 22 Feb 2025 21:09:30 +0800</pubDate>
+      
+      <guid>https://oddyti.com/post/jmm/</guid>
+      <description>&lt;h2 id=&#34;java内存模型jmm&#34;&gt;Java内存模型(JMM)&lt;/h2&gt;
+&lt;h3 id=&#34;运行时数据区&#34;&gt;运行时数据区&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://oddyti.com/post/jmm/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA.jpg&#34;
+	width=&#34;552&#34;
+	height=&#34;383&#34;
+	srcset=&#34;https://oddyti.com/post/jmm/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA_hu_768bcc446ef86718.jpg 480w, https://oddyti.com/post/jmm/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA_hu_8e4f65b9148bc9e9.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;144&#34;
+		data-flex-basis=&#34;345px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;线程私有：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;本地方法栈：用于管理本地方法的调用，里面并没有我们写的代码逻辑，其由native修饰，由 C 语言实现。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;程序计数器：它是一块很小的内存空间，主要用来记录各个线程执行的字节码的地址，例如，分支、循环、线程恢复等都依赖于计数器。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Java多线程 - 一篇不太详细的解释</title>
+      <link>https://oddyti.com/post/multi-threading/</link>
+      <pubDate>Thu, 20 Feb 2025 17:31:03 +0800</pubDate>
+      
+      <guid>https://oddyti.com/post/multi-threading/</guid>
+      <description>&lt;h2 id=&#34;多线程&#34;&gt;多线程&lt;/h2&gt;
+&lt;p&gt;Java 线程通常是 &lt;strong&gt;一对一模型&lt;/strong&gt;，即每个 Java 线程直接映射到一个操作系统内核线程。但某些 JVM 可能使用用户线程或混合模型（如 M:N 模型，多个用户线程映射到少量内核线程）。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Java基础 - 从匿名内部类到Lambda表达式再到方法引用</title>
+      <link>https://oddyti.com/post/lambda/</link>
+      <pubDate>Tue, 18 Feb 2025 12:24:57 +0800</pubDate>
+      
+      <guid>https://oddyti.com/post/lambda/</guid>
+      <description>&lt;p&gt;在当初学习Lambda表达式时，总是迷迷糊糊，恍恍惚惚，所以这次打算一次把自己讲明白。&lt;/p&gt;
+&lt;h2 id=&#34;内部类&#34;&gt;内部类&lt;/h2&gt;
+&lt;p&gt;为什么会有内部类？&lt;/p&gt;
+&lt;p&gt;场景：如果一个类只在另一个类中使用，并且需要直接访问外部类的成员，（包括私有成员），而不需要通过 &lt;code&gt;getter&lt;/code&gt; 或 &lt;code&gt;setter&lt;/code&gt; 方法。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>2024年终总结</title>
       <link>https://oddyti.com/post/summary-2024/</link>
       <pubDate>Sun, 19 Jan 2025 22:07:15 +0800</pubDate>

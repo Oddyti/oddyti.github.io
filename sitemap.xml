@@ -44,6 +44,41 @@
   </url>
   
   <url>
+    <loc>https://oddyti.com/tags/java%E5%B9%B6%E5%8F%91/</loc>
+    <lastmod>2025-02-24T21:14:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://oddyti.com/post/thread-pool/</loc>
+    <lastmod>2025-02-24T21:14:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://oddyti.com/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2025-02-24T21:14:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://oddyti.com/post/jmm/</loc>
+    <lastmod>2025-02-22T21:09:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://oddyti.com/post/multi-threading/</loc>
+    <lastmod>2025-02-20T17:31:03+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://oddyti.com/tags/java%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2025-02-18T12:24:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://oddyti.com/post/lambda/</loc>
+    <lastmod>2025-02-18T12:24:57+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://oddyti.com/post/summary-2024/</loc>
     <lastmod>2025-01-19T22:07:15+08:00</lastmod>
   </url>
@@ -55,11 +90,6 @@
   
   <url>
     <loc>https://oddyti.com/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2025-01-05T13:36:19+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://oddyti.com/categories/%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2025-01-05T13:36:19+08:00</lastmod>
   </url>
   
