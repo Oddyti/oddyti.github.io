@@ -40,7 +40,7 @@
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/movie-records/poster-resize.jpg&#34;
 	width=&#34;2560&#34;
 	height=&#34;1600&#34;
-	srcset=&#34;http://localhost:1313/post/movie-records/poster-resize_hu12661587526308864103.jpg 480w, http://localhost:1313/post/movie-records/poster-resize_hu5202897558436925740.jpg 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;海报&#34;
@@ -57,7 +57,7 @@
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/movie-records/surf.png&#34;
 	width=&#34;2560&#34;
 	height=&#34;1351&#34;
-	srcset=&#34;http://localhost:1313/post/movie-records/surf_hu4819583414014881196.png 480w, http://localhost:1313/post/movie-records/surf_hu587691467709058624.png 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;冲浪&#34;
@@ -71,7 +71,7 @@
 &lt;img src=&#34;http://localhost:1313/post/movie-records/pals.png&#34;
 	width=&#34;2560&#34;
 	height=&#34;1351&#34;
-	srcset=&#34;http://localhost:1313/post/movie-records/pals_hu13231567637808881825.png 480w, http://localhost:1313/post/movie-records/pals_hu11712646626824933086.png 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;伙伴&#34;
@@ -86,7 +86,7 @@
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/movie-records/a-scene-at-the-sea.jpg&#34;
 	width=&#34;2048&#34;
 	height=&#34;2048&#34;
-	srcset=&#34;http://localhost:1313/post/movie-records/a-scene-at-the-sea_hu2185535883953290286.jpg 480w, http://localhost:1313/post/movie-records/a-scene-at-the-sea_hu14639357773388614291.jpg 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;贵子和茂&#34;
@@ -145,7 +145,7 @@
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/return-to-dust/%E9%9A%90%E5%85%A5%E5%B0%98%E7%83%9F.jpg&#34;
 	width=&#34;1000&#34;
 	height=&#34;646&#34;
-	srcset=&#34;http://localhost:1313/post/return-to-dust/%E9%9A%90%E5%85%A5%E5%B0%98%E7%83%9F_hu14835842985817383120.jpg 480w, http://localhost:1313/post/return-to-dust/%E9%9A%90%E5%85%A5%E5%B0%98%E7%83%9F_hu18220327023362302342.jpg 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;隐入尘烟&#34;
@@ -174,7 +174,7 @@
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/buddha-/d02qldgf.jpg&#34;
 	width=&#34;358&#34;
 	height=&#34;105&#34;
-	srcset=&#34;http://localhost:1313/post/buddha-/d02qldgf_hu8631423182745908528.jpg 480w, http://localhost:1313/post/buddha-/d02qldgf_hu2759570157787556716.jpg 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;面会菜&#34;
@@ -190,7 +190,7 @@
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/buddha-/oeirjuu0.jpg&#34;
 	width=&#34;999&#34;
 	height=&#34;465&#34;
-	srcset=&#34;http://localhost:1313/post/buddha-/oeirjuu0_hu158694272227611481.jpg 480w, http://localhost:1313/post/buddha-/oeirjuu0_hu15277324396847719402.jpg 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;菜埔第一次来到肚财的家&#34;

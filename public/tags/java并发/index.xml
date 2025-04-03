@@ -112,7 +112,7 @@
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/thread-pool/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E4%BB%BB%E5%8A%A1%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B.png&#34;
 	width=&#34;947&#34;
 	height=&#34;592&#34;
-	srcset=&#34;http://localhost:1313/post/thread-pool/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E4%BB%BB%E5%8A%A1%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B_hu8214748630504725965.png 480w, http://localhost:1313/post/thread-pool/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E4%BB%BB%E5%8A%A1%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B_hu15872630819545579010.png 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -169,7 +169,7 @@
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/jmm/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA.jpg&#34;
 	width=&#34;552&#34;
 	height=&#34;383&#34;
-	srcset=&#34;http://localhost:1313/post/jmm/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA_hu15705224338970604634.jpg 480w, http://localhost:1313/post/jmm/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA_hu17335625357861880739.jpg 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image&#34;
@@ -217,7 +217,7 @@
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/jmm/image-20250323174724214.png&#34;
 	width=&#34;1214&#34;
 	height=&#34;972&#34;
-	srcset=&#34;http://localhost:1313/post/jmm/image-20250323174724214_hu595018060436462261.png 480w, http://localhost:1313/post/jmm/image-20250323174724214_hu13321317303949829328.png 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20250323174724214&#34;
@@ -238,7 +238,7 @@
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/jmm/JMM.jpeg&#34;
 	width=&#34;1278&#34;
 	height=&#34;998&#34;
-	srcset=&#34;http://localhost:1313/post/jmm/JMM_hu6174460609057926715.jpeg 480w, http://localhost:1313/post/jmm/JMM_hu11344105041411230814.jpeg 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;

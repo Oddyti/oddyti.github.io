@@ -57,7 +57,7 @@
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/jmm/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA.jpg&#34;
 	width=&#34;552&#34;
 	height=&#34;383&#34;
-	srcset=&#34;http://localhost:1313/post/jmm/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA_hu15705224338970604634.jpg 480w, http://localhost:1313/post/jmm/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA_hu17335625357861880739.jpg 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image&#34;
@@ -131,7 +131,7 @@
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/sort-methods/InsertionSort.gif&#34;
 	width=&#34;811&#34;
 	height=&#34;505&#34;
-	srcset=&#34;http://localhost:1313/post/sort-methods/InsertionSort_hu10153366062721344118.gif 480w, http://localhost:1313/post/sort-methods/InsertionSort_hu14175588752748506971.gif 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;

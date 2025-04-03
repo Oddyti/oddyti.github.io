@@ -17,7 +17,7 @@
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/sort-methods/InsertionSort.gif&#34;
 	width=&#34;811&#34;
 	height=&#34;505&#34;
-	srcset=&#34;http://localhost:1313/post/sort-methods/InsertionSort_hu10153366062721344118.gif 480w, http://localhost:1313/post/sort-methods/InsertionSort_hu14175588752748506971.gif 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -81,7 +81,7 @@ $$
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/sort-methods/ShellSort.webp&#34;
 	width=&#34;773&#34;
 	height=&#34;598&#34;
-	srcset=&#34;http://localhost:1313/post/sort-methods/ShellSort_hu8312486246758614074.webp 480w, http://localhost:1313/post/sort-methods/ShellSort_hu14345901608758045228.webp 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;ShellSort&#34;
@@ -145,7 +145,7 @@ $$
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/sort-methods/SelectionSort.gif&#34;
 	width=&#34;811&#34;
 	height=&#34;248&#34;
-	srcset=&#34;http://localhost:1313/post/sort-methods/SelectionSort_hu13924612369311556781.gif 480w, http://localhost:1313/post/sort-methods/SelectionSort_hu9784724073846985948.gif 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;SelectionSort&#34;
@@ -205,7 +205,7 @@ $$
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/sort-methods/wanquanerchashu.png&#34;
 	width=&#34;818&#34;
 	height=&#34;313&#34;
-	srcset=&#34;http://localhost:1313/post/sort-methods/wanquanerchashu_hu13581913318179596821.png 480w, http://localhost:1313/post/sort-methods/wanquanerchashu_hu16983661530517858594.png 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;wanquanerchashu&#34;
@@ -224,7 +224,7 @@ $$
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/sort-methods/daxiaodingdui.png&#34;
 	width=&#34;845&#34;
 	height=&#34;293&#34;
-	srcset=&#34;http://localhost:1313/post/sort-methods/daxiaodingdui_hu18236142827918303681.png 480w, http://localhost:1313/post/sort-methods/daxiaodingdui_hu713074959089139010.png 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;daxiaodingdui&#34;
@@ -342,7 +342,7 @@ $$
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/sort-methods/BubbleSort.gif&#34;
 	width=&#34;826&#34;
 	height=&#34;257&#34;
-	srcset=&#34;http://localhost:1313/post/sort-methods/BubbleSort_hu11345488674510130255.gif 480w, http://localhost:1313/post/sort-methods/BubbleSort_hu987321705673716918.gif 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;BubbleSort&#34;
@@ -762,7 +762,7 @@ $$
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/sort-methods/image-20241209183344742.png&#34;
 	width=&#34;676&#34;
 	height=&#34;690&#34;
-	srcset=&#34;http://localhost:1313/post/sort-methods/image-20241209183344742_hu13608869097355925498.png 480w, http://localhost:1313/post/sort-methods/image-20241209183344742_hu8549735890399252260.png 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20241209183344742&#34;
