@@ -57,7 +57,7 @@
 &lt;p&gt;&lt;img src=&#34;https://oddyti.com/post/jmm/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA.jpg&#34;
 	width=&#34;552&#34;
 	height=&#34;383&#34;
-	srcset=&#34;https://oddyti.com/post/jmm/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA_hu_768bcc446ef86718.jpg 480w, https://oddyti.com/post/jmm/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA_hu_8e4f65b9148bc9e9.jpg 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image&#34;
@@ -119,6 +119,30 @@
 &lt;h2 id=&#34;texlive安装&#34;&gt;TeXLive安装&lt;/h2&gt;
 &lt;h3 id=&#34;概念区分&#34;&gt;概念区分&lt;/h3&gt;
 &lt;p&gt;虽然已经使用LaTex写了许多实验报告和论文，但是对于这个大家族的许多概念名词有很多的混淆。所以先做一下概念区分（来源于GPT）&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>排序算法总结</title>
+      <link>https://oddyti.com/post/sort-methods/</link>
+      <pubDate>Thu, 12 Dec 2024 10:41:27 +0800</pubDate>
+      
+      <guid>https://oddyti.com/post/sort-methods/</guid>
+      <description>&lt;h2 id=&#34;插入排序insertion-sort&#34;&gt;插入排序（Insertion Sort）&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://oddyti.com/post/sort-methods/InsertionSort.gif&#34;
+	width=&#34;811&#34;
+	height=&#34;505&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;160&#34;
+		data-flex-basis=&#34;385px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;插入排序可以说是最直观的排序算法，简单而言，假设该位置的元素之前已经为排序好的升序，那么我将该元素从此位置依次从后往前与排序好的元素比较，如果更小，则交换，直到找到比该元素小的。&lt;/p&gt;</description>
     </item>
     
     <item>
