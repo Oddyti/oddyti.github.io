@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Oddyti</copyright>
-        <lastBuildDate>Mon, 24 Mar 2025 21:34:57 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/java%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 18 Feb 2025 12:24:57 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/java%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Java基础 - 从匿名内部类到Lambda表达式再到方法引用</title>
         <link>http://localhost:1313/post/lambda/</link>
-        <pubDate>Mon, 24 Mar 2025 21:34:57 +0800</pubDate>
+        <pubDate>Tue, 18 Feb 2025 12:24:57 +0800</pubDate>
         
         <guid>http://localhost:1313/post/lambda/</guid>
         <description>&lt;p&gt;在当初学习Lambda表达式时，总是迷迷糊糊，恍恍惚惚，所以这次打算一次把自己讲明白。&lt;/p&gt;

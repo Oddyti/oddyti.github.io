@@ -7,20 +7,20 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Oddyti</copyright>
-        <lastBuildDate>Mon, 24 Mar 2025 21:34:57 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>技术</title>
-        <link>http://localhost:1313/categories/%E6%8A%80%E6%9C%AF/</link>
-        <pubDate>Mon, 24 Mar 2025 21:34:57 +0800</pubDate>
-        
-        <guid>http://localhost:1313/categories/%E6%8A%80%E6%9C%AF/</guid>
-        <description></description>
-        </item>
-        <item>
+        <lastBuildDate>Tue, 04 Mar 2025 09:59:29 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>记录</title>
         <link>http://localhost:1313/categories/%E8%AE%B0%E5%BD%95/</link>
         <pubDate>Tue, 04 Mar 2025 09:59:29 +0800</pubDate>
         
         <guid>http://localhost:1313/categories/%E8%AE%B0%E5%BD%95/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>技术</title>
+        <link>http://localhost:1313/categories/%E6%8A%80%E6%9C%AF/</link>
+        <pubDate>Mon, 24 Feb 2025 21:14:04 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/%E6%8A%80%E6%9C%AF/</guid>
         <description></description>
         </item>
         <item>
