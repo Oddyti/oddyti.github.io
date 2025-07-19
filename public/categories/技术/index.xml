@@ -131,20 +131,17 @@
 &lt;h3 id=&#34;excutors类&#34;&gt;&lt;code&gt;Excutors&lt;/code&gt;类&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;Executors&lt;/code&gt; 是一个工具类，提供了静态工厂方法，用于创建不同类型的线程池。它的主要目的是简化线程池的创建，隐藏底层实现的复杂性。其基本方法主要都由&lt;code&gt;ThreadPoolExecutor&lt;/code&gt;类实现。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;Executors&lt;/code&gt; 是对 &lt;code&gt;ThreadPoolExecutor&lt;/code&gt; 的一种高层抽象，而 &lt;code&gt;ThreadPoolExecutor&lt;/code&gt; 是线程池的核心实现。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;Executors&lt;/code&gt; 是对 &lt;code&gt;ThreadPoolExecutor&lt;/code&gt; 的一种高层抽象，而 &lt;code&gt;ThreadPoolExecutor&lt;/code&gt; 是线程池的核心实现。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;这里讲讲&lt;code&gt;Executors&lt;/code&gt; 工具类的四个静态方法&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;newFixedThreadPool(int nThreads)&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;创建一个&lt;strong&gt;只有核心线程&lt;/strong&gt;且&lt;strong&gt;固定数量&lt;/strong&gt;的线程池，。适合任务数量稳定、需要控制并发数量的场景。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;固定数量工人工厂，&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;固定数量工人工厂，&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;由于线程不会被回收，会一直卡在阻塞，所以&lt;strong&gt;没有任务的情况下， FixedThreadPool占用资源更多&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;newCachedThreadPool&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;创建一个可缓存的线程池，不创建核心线程，&lt;strong&gt;只创建非核心线程&lt;/strong&gt;，线程数量会根据任务数量动态调整。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;只有临时工工厂，有多少任务雇佣多少工人，工人一旦空闲就解雇&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;只有临时工工厂，有多少任务雇佣多少工人，工人一旦空闲就解雇&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;当需要执行很多&lt;strong&gt;短时间&lt;/strong&gt;的任务时，CacheThreadPool的线程复用率比较高， 会显著的&lt;strong&gt;提高性能&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;newSingleThreadExecutor()&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;创建一个单线程的线程池，所有任务按顺序执行。&lt;/p&gt;
@@ -154,8 +151,7 @@
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;newWorkStealingPool()&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;建一个工作窃取线程池，使用 &lt;code&gt;ForkJoinPool&lt;/code&gt; 实现，适合并行处理任务。并不使用&lt;code&gt;ThreadPoolExecutor&lt;/code&gt; 实现。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;就像你开了一家团队协作公司，每个人（线程）不仅做自己的任务，还会偷别人的任务来做，效率更高。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;就像你开了一家团队协作公司，每个人（线程）不仅做自己的任务，还会偷别人的任务来做，效率更高。&lt;/p&gt;&lt;/blockquote&gt;
 </description>
         </item>
         <item>
@@ -320,8 +316,7 @@
 &lt;p&gt;为了实现这个安全性，JVM在堆上分配对象时，首先会对内存&lt;strong&gt;空间清零&lt;/strong&gt;，然后才会在上面分配对象（这两个操作是同步的）。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;空间清零&lt;/p&gt;
-&lt;p&gt;Memory Zeroing: 实际上翻译有所误解，Zeroing指设置默认值为0或其他默认值，并非清零&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Memory Zeroing: 实际上翻译有所误解，Zeroing指设置默认值为0或其他默认值，并非清零&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h4 id=&#34;happens-before原则&#34;&gt;happens-before原则&lt;/h4&gt;
 &lt;p&gt;为了解放程序员，让程序员在开发时尽量不用考虑内存可见和指令重排问题，JMM提供了happens-before原则，只要程序员按照这个原则写代码，则程序就能保证在JMM中具有强的内存可见性。&lt;/p&gt;
 &lt;p&gt;happens-before关系的定义如下：&lt;/p&gt;

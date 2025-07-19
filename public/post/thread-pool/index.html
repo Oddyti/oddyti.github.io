@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://localhost:1313/post/thread-pool/'>
 
-<link rel="stylesheet" href="/scss/style.min.55180641c36e749dfc9d4c0f364df9e327fb7341a757d5bdc4c4a60910a0f721.css"><meta property='og:title' content='Java线程池(Thread Pool) - 一篇不太详细的解释'>
+<link rel="stylesheet" href="/scss/style.min.56bae8cb69ca9d2f56886d592f055c2439245ffb427a09e5eae364373d68e9ff.css"><meta property='og:title' content='Java线程池(Thread Pool) - 一篇不太详细的解释'>
 <meta property='og:description' content='学习Java线程池(Thread Pool)的总结，主要包括ThreadPoolExecutor类的介绍，Excutors类介绍'>
 <meta property='og:url' content='http://localhost:1313/post/thread-pool/'>
 <meta property='og:site_name' content='Oddyti的小站'>
@@ -60,7 +60,7 @@
                     
                     
                         
-                        <img src="/img/snoopy_hu17586886958625409136.jpg" width="300"
+                        <img src="/img/snoopy_hu_706a7320c458592d.jpg" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
@@ -485,20 +485,17 @@
 <h3 id="excutors类"><code>Excutors</code>类</h3>
 <p><code>Executors</code> 是一个工具类，提供了静态工厂方法，用于创建不同类型的线程池。它的主要目的是简化线程池的创建，隐藏底层实现的复杂性。其基本方法主要都由<code>ThreadPoolExecutor</code>类实现。</p>
 <blockquote>
-<p><code>Executors</code> 是对 <code>ThreadPoolExecutor</code> 的一种高层抽象，而 <code>ThreadPoolExecutor</code> 是线程池的核心实现。</p>
-</blockquote>
+<p><code>Executors</code> 是对 <code>ThreadPoolExecutor</code> 的一种高层抽象，而 <code>ThreadPoolExecutor</code> 是线程池的核心实现。</p></blockquote>
 <p>这里讲讲<code>Executors</code> 工具类的四个静态方法</p>
 <p><strong><code>newFixedThreadPool(int nThreads)</code></strong></p>
 <p>创建一个<strong>只有核心线程</strong>且<strong>固定数量</strong>的线程池，。适合任务数量稳定、需要控制并发数量的场景。</p>
 <blockquote>
-<p>固定数量工人工厂，</p>
-</blockquote>
+<p>固定数量工人工厂，</p></blockquote>
 <p>由于线程不会被回收，会一直卡在阻塞，所以<strong>没有任务的情况下， FixedThreadPool占用资源更多</strong>。</p>
 <p><strong><code>newCachedThreadPool</code></strong></p>
 <p>创建一个可缓存的线程池，不创建核心线程，<strong>只创建非核心线程</strong>，线程数量会根据任务数量动态调整。</p>
 <blockquote>
-<p>只有临时工工厂，有多少任务雇佣多少工人，工人一旦空闲就解雇</p>
-</blockquote>
+<p>只有临时工工厂，有多少任务雇佣多少工人，工人一旦空闲就解雇</p></blockquote>
 <p>当需要执行很多<strong>短时间</strong>的任务时，CacheThreadPool的线程复用率比较高， 会显著的<strong>提高性能</strong>。</p>
 <p><strong><code>newSingleThreadExecutor()</code></strong></p>
 <p>创建一个单线程的线程池，所有任务按顺序执行。</p>
@@ -508,8 +505,7 @@
 <p><strong><code>newWorkStealingPool()</code></strong></p>
 <p>建一个工作窃取线程池，使用 <code>ForkJoinPool</code> 实现，适合并行处理任务。并不使用<code>ThreadPoolExecutor</code> 实现。</p>
 <blockquote>
-<p>就像你开了一家团队协作公司，每个人（线程）不仅做自己的任务，还会偷别人的任务来做，效率更高。</p>
-</blockquote>
+<p>就像你开了一家团队协作公司，每个人（线程）不仅做自己的任务，还会偷别人的任务来做，效率更高。</p></blockquote>
 
 </section>
 

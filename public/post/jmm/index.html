@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://localhost:1313/post/jmm/'>
 
-<link rel="stylesheet" href="/scss/style.min.55180641c36e749dfc9d4c0f364df9e327fb7341a757d5bdc4c4a60910a0f721.css"><meta property='og:title' content='Java内存模型(JMM) - 一篇不太详细的解释'>
+<link rel="stylesheet" href="/scss/style.min.56bae8cb69ca9d2f56886d592f055c2439245ffb427a09e5eae364373d68e9ff.css"><meta property='og:title' content='Java内存模型(JMM) - 一篇不太详细的解释'>
 <meta property='og:description' content='学习Java内存模型(JMM)的总结，包括运行时数据区、顺序一致性模型、happens-before原则、volatile关键字、锁机制、synchronized关键字'>
 <meta property='og:url' content='http://localhost:1313/post/jmm/'>
 <meta property='og:site_name' content='Oddyti的小站'>
@@ -60,7 +60,7 @@
                     
                     
                         
-                        <img src="/img/snoopy_hu17586886958625409136.jpg" width="300"
+                        <img src="/img/snoopy_hu_706a7320c458592d.jpg" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
@@ -534,8 +534,7 @@
 <p>为了实现这个安全性，JVM在堆上分配对象时，首先会对内存<strong>空间清零</strong>，然后才会在上面分配对象（这两个操作是同步的）。</p>
 <blockquote>
 <p>空间清零</p>
-<p>Memory Zeroing: 实际上翻译有所误解，Zeroing指设置默认值为0或其他默认值，并非清零</p>
-</blockquote>
+<p>Memory Zeroing: 实际上翻译有所误解，Zeroing指设置默认值为0或其他默认值，并非清零</p></blockquote>
 <h4 id="happens-before原则">happens-before原则</h4>
 <p>为了解放程序员，让程序员在开发时尽量不用考虑内存可见和指令重排问题，JMM提供了happens-before原则，只要程序员按照这个原则写代码，则程序就能保证在JMM中具有强的内存可见性。</p>
 <p>happens-before关系的定义如下：</p>
