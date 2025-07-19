@@ -6,7 +6,6 @@
         {{ if eq .Draft true }}
             <meta name="robots" content="noindex">
         {{ end }}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/2.0.2/sha256.js"></script>
     </head>
     <body class="{{ block `body-class` . }}{{ end }}">
         {{- partial "head/colorScheme" . -}}
@@ -28,14 +27,5 @@
             </main>
         </div>
         {{ partial "footer/include.html" . }}
-        {{ if eq .Draft true }}
-        {{ $draftJs := resources.Get "js/draft.js"
-            | minify
-            | fingerprint }}
-        <script
-            src="{{ $draftJs.RelPermalink }}"
-            integrity="{{ $draftJs.Data.Integrity }}"
-        ></script>
-        {{ end }}
     </body>
 </html>
