@@ -8,7 +8,7 @@ tags = ['音乐','安利']
 categories = ['分享']
 image = ''
 license = false
-weight = 1
+weight = ''
 +++
 
 个人向的歌曲推荐视频——第二期！（希望能有第三期，具体初衷可以看看第一期
