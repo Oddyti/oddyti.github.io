@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DOM on Oddyti的小站</title><link>https://oddyti.com/tags/dom/</link><description>Recent content in DOM on Oddyti的小站</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>Oddyti</copyright><lastBuildDate>Mon, 11 Dec 2023 13:42:37 +0800</lastBuildDate><atom:link href="https://oddyti.com/tags/dom/index.xml" rel="self" type="application/rss+xml"/><item><title>DOM学习记录</title><link>https://oddyti.com/post/dom-study/</link><pubDate>Mon, 11 Dec 2023 13:42:37 +0800</pubDate><guid>https://oddyti.com/post/dom-study/</guid><description>&lt;h2 id="domdocument-object-model"&gt;DOM(Document Object Model)
+&lt;/h2&gt;&lt;p&gt;DOM将网页所有内容都转换成了对象&lt;/p&gt;
+&lt;p&gt;Model表示对象之间的关系，如父子、后代等&lt;/p&gt;
+&lt;p&gt;网页中的每个对象都是一个节点(Node)&lt;/p&gt;
+&lt;h3 id="document对象"&gt;document对象
+&lt;/h3&gt;&lt;p&gt;document对象表示整个网页。&lt;/p&gt;
+&lt;p&gt;document对象的原型链（继承链）&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;HTMLDocument -&amp;gt; Document -&amp;gt; Node -&amp;gt; EventTarget -&amp;gt; Object.prototype -&amp;gt; null
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;原型链上的属性和方法都可以通过Document调用&lt;/p&gt;
+&lt;p&gt;一些常用属性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;document.documentElement&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;document.head&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;document.title&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;document.body&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="元素节点"&gt;元素节点
+&lt;/h3&gt;&lt;p&gt;网页中，每一个标签都是一个元素节点对象&lt;/p&gt;
+&lt;h4 id="通过document对象获取元素节点"&gt;通过document对象获取元素节点
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;document.getElementById()&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;根据元素id获取一个对象&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;document.getElementsByClassName()&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;根据元素class属性值获取一组元素对象&lt;/li&gt;
+&lt;li&gt;返回一个类数组对象，可索引，可遍历&lt;/li&gt;
+&lt;li&gt;该方法返回的结果是一个实时更新的集合&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;document.getElementsByTagName()&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;根据标签名获取元素对象&lt;/li&gt;
+&lt;li&gt;返回结果同样是实时更新&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;document.get ElementsByName()&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;根据name属性获取原属对象&lt;/li&gt;
+&lt;li&gt;常用于表单&lt;/li&gt;
+&lt;li&gt;返回结果同样实时更新&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;document.querySelectorAll()&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;根据选择器查询所有符合元素&lt;/li&gt;
+&lt;li&gt;不会实时更新返回结果&lt;/li&gt;
+&lt;li&gt;总会返回类数组&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;document.querySelector()&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;根据选择器返回第一个符合的元素&lt;/li&gt;
+&lt;li&gt;只返回一个元素&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="通过元素节点对象获取其他节点"&gt;通过元素节点对象获取其他节点
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;区分元素和节点&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;parent.getElementsByTagName()&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;可以通过父类获取后代中的元素&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;`element.childNodes
+&lt;ul&gt;
+&lt;li&gt;获取当前元素的子节点&lt;/li&gt;
+&lt;li&gt;包含空白子节点&lt;/li&gt;
+&lt;li&gt;不实用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;element.children&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;获取当前元素的子元素&lt;/li&gt;
+&lt;li&gt;只取元素，不包括空白&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;element.fisrtElementChild&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;获取元素&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;element.nextElementSibling&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;获取下一个兄弟元素&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;element.parentNode&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;获取父节点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="文本节点"&gt;文本节点
+&lt;/h3&gt;&lt;p&gt;DOM中，网页中所有的文本内容都是文本对象节点，包括空白&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;可以通过元素获取其中的文本节点，但是通常不这样做&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;可以直接通过元素去修改其中的文本&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;element.textContent&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;获取或修改元素中的文本内容&lt;/li&gt;
+&lt;li&gt;获取的是标签中的内容，不会考虑css样式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;element.innerText&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;获取或修改元素中的文本内容&lt;/li&gt;
+&lt;li&gt;获取内容时，会考虑css样式&lt;/li&gt;
+&lt;li&gt;通过&lt;code&gt;innerText&lt;/code&gt;读取CSS样式，会出发网页的重排&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;element.innerHTML&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;获取或修改元素中的HTML&lt;strong&gt;代码&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;可以读取到内容中的标签&lt;/li&gt;
+&lt;li&gt;可以直接向元素中添加HTML代码&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;innerHTML&lt;/code&gt;在插入内容时，有被xss注入的风险&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="属性节点"&gt;属性节点
+&lt;/h3&gt;&lt;p&gt;属性节点（Attribute）通常不需要获取对象而是直接通过元素即可完成对其的各种操作&lt;/p&gt;
+&lt;p&gt;如何操作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;方式一
+&lt;ul&gt;
+&lt;li&gt;读取：&lt;code&gt;元素.属性名&lt;/code&gt;*（注意，class属性需要通过className来读取）
+&lt;ul&gt;
+&lt;li&gt;读取布尔值时，会返回true或false，但是disabled属性只要存在就默认disabled&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;修改：直接赋值就行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;方式二
+&lt;ul&gt;
+&lt;li&gt;读取：&lt;code&gt;元素.getAttribute(AttrName)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;修改：&lt;code&gt;元素.setAttribute(AttrName, Attr)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;删除：&lt;code&gt;元素.removeAttribute(AttrName)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="事件-event"&gt;事件 Event
+&lt;/h3&gt;&lt;p&gt;用户和页面的交互行为，如：点击按钮、鼠标移动等等&lt;/p&gt;
+&lt;p&gt;可以为事件绑定响应函数（回调函数）&lt;/p&gt;
+&lt;p&gt;在事件的响应函数中，事件绑定给谁，其&lt;code&gt;this&lt;/code&gt;就指向谁（箭头函数除外）&lt;/p&gt;
+&lt;p&gt;绑定函数的方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;直接在元素属性中设置&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;button&lt;/span&gt; &lt;span class="na"&gt;id &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;btn&amp;#34;&lt;/span&gt; &lt;span class="na"&gt;click &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;alert(&amp;#39;haha&amp;#39;)&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;click&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;button&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;可以通过为元素的执行属性设置回调函数的形式来绑定&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-js" data-lang="js"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;btn&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getElementById&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;btn&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;btn&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;onclick&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;不能重复绑定，一个事件只能绑定一个&lt;/li&gt;
+&lt;li&gt;重复绑定会覆盖&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过元素&lt;code&gt;addEventListener()&lt;/code&gt;方法来绑定&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-js" data-lang="js"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;btn&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addEventListener&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;click&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;一个事件可以绑定多个事件&lt;/li&gt;
+&lt;li&gt;顺序执行&lt;/li&gt;
+&lt;li&gt;更推荐&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="文档的加载"&gt;文档的加载
+&lt;/h3&gt;&lt;p&gt;网页是按html代码顺序加载，当Script标签在head里时，js代码无法获取DOM对象&lt;/p&gt;
+&lt;p&gt;如何解决js代码无法获取DOM对象：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;将script标签写到body的最后（不要写到body外）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过&lt;code&gt;window.onload()&lt;/code&gt;使代码在窗口加载完毕之后执行&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;等待窗口中所有文档加载完毕才会触发&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;同上，通过&lt;code&gt;window.addEventListener(&amp;quot;load&amp;quot;,function(){})&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过document对象的&lt;code&gt;DOMContenLoaded&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;document.addEventListener(&amp;quot;DOMContentLoaded&amp;quot;, function(){})&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在当前文档加载完毕即触发（但是一个窗口可以不只有一个文档）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;执行时机更早&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将代码编写到外部js对象中，然后以&lt;code&gt;defer&lt;/code&gt;的形式引入&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;defer&lt;/span&gt; &lt;span class="na"&gt;src &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;./js/script.js&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;早于&lt;code&gt;DOMContenLoaded&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="dom的修改"&gt;DOM的修改
+&lt;/h3&gt;&lt;p&gt;主要讲元素的创建、替换与删减&lt;/p&gt;
+&lt;h4 id="元素的创建与添加"&gt;元素的创建与添加
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;创建元素
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;document.createElement(&amp;quot;li&amp;quot;)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;添加元素
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;元素.appendChild(新元素)&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;给元素添加一个子节点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;元素.insertAdjacentElement()&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;两个参数：1 添加位置 2 添加的元素&lt;/li&gt;
+&lt;li&gt;可以给元素添加兄弟节点或子节点&lt;/li&gt;
+&lt;li&gt;一些位置：&lt;code&gt;&amp;quot;befoeend&amp;quot;&lt;/code&gt;, &lt;code&gt;&amp;quot;afterbegin&amp;quot;&lt;/code&gt;,&lt;code&gt;beforebegin&lt;/code&gt;,&lt;code&gt;afterend&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;元素.insertAdjacentHTML()&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;插入HMTL代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="元素的替换"&gt;元素的替换
+&lt;/h4&gt;&lt;p&gt;&lt;code&gt;元素.repalceWith(新元素)&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id="元素的删除"&gt;元素的删除
+&lt;/h4&gt;&lt;p&gt;&lt;code&gt;元素.remove()&lt;/code&gt;&lt;/p&gt;</description></item></channel></rss>
