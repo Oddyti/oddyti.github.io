@@ -1,8 +1,8 @@
 +++
-title = '2024年度总结'
+title = '2024 年度总结'
 date = 2025-01-19T22:07:15+08:00
 draft = false
-description = '2024年的年终总结'
+description = '2024年的年度总结'
 slug = 'summary-2024'
 tags = ['年度总结']
 categories = ['出神']

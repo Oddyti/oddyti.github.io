@@ -1,0 +1,4 @@
+article:
+    readingTime:
+        other: "阅读耗时: {{ .Count }} 分钟"
+
