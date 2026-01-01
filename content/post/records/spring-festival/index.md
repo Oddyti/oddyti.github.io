@@ -2,7 +2,7 @@
 title = '春节梦'
 date = 2025-03-04T09:59:29+08:00
 draft = false
-description = ''
+description = '春节回家的一些感悟，关于记忆、归属与时光碎片'
 slug = 'spring-festival'
 tags = ['归乡']
 categories = ['出神']
