@@ -1,4 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>赶路 on Oddyti的小站</title><link>https://oddyti.com/categories/%E8%B5%B6%E8%B7%AF/</link><description>Recent content in 赶路 on Oddyti的小站</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>Oddyti</copyright><lastBuildDate>Mon, 11 Dec 2023 13:42:37 +0800</lastBuildDate><atom:link href="https://oddyti.com/categories/%E8%B5%B6%E8%B7%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>DOM学习记录</title><link>https://oddyti.com/post/dom-study/</link><pubDate>Mon, 11 Dec 2023 13:42:37 +0800</pubDate><guid>https://oddyti.com/post/dom-study/</guid><description>&lt;h2 id="domdocument-object-model"&gt;DOM(Document Object Model)
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>赶路 on Oddyti的小站</title><link>https://oddyti.com/categories/%E8%B5%B6%E8%B7%AF/</link><description>Recent content in 赶路 on Oddyti的小站</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>Oddyti</copyright><lastBuildDate>Thu, 01 Jan 2026 22:49:00 +0800</lastBuildDate><atom:link href="https://oddyti.com/categories/%E8%B5%B6%E8%B7%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>文笔提升小技巧</title><link>https://oddyti.com/post/writing-tips/</link><pubDate>Thu, 01 Jan 2026 22:49:00 +0800</pubDate><guid>https://oddyti.com/post/writing-tips/</guid><description>&lt;p&gt;经常与 Gemini 老师讨论如何提升文笔，于是将一些讨论后的结果总结在此。&lt;/p&gt;
+&lt;h3 id="消除叙述中的逻辑补丁与思考痕迹"&gt;消除叙述中的逻辑补丁与思考痕迹
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;原因：逻辑连接词（如：其实、实际上、于是、总之）通常是作者在理清思路时的痕迹，但是在呈现给读者的文字中，逻辑应当由事件的先后顺序或因果关系自然呈现。&lt;/li&gt;
+&lt;li&gt;示例
+&lt;ul&gt;
+&lt;li&gt;实际上我不喜欢喝咖啡，所以我只喝了一口便倒掉了。&lt;/li&gt;
+&lt;li&gt;我喝了一口咖啡，剩下的全倒进了水槽。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="将抽象概括词替换为具象的身体动词"&gt;将抽象概括词替换为具象的身体动词
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;原因：抽象概括词（如：转化、意识到、产生、进行）属于概括性语言，它们跳过了动作的具体过程，导致读者无法产生感官共鸣。文学写作需要描写身体能察觉到的动作，让读者直接观察到发生的过程。&lt;/li&gt;
+&lt;li&gt;示例
+&lt;ul&gt;
+&lt;li&gt;处理情绪、思考故乡、转化思想。&lt;/li&gt;
+&lt;li&gt;平复呼吸、咀嚼那个名字、把念头按在纸上。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="将说明式的动机交代和心理预告替换为外化的动作和结果"&gt;将说明式的动机交代和心理预告替换为外化的动作和结果
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;原因：交代“我将要做什么”或描述“正在进行的心理活动”会中断叙事的连续性，使文字变成一份计划书。直接描写已经发生的动作或外化的行为细节，能够更精准地反映心理状态。&lt;/li&gt;
+&lt;li&gt;示例：&lt;/li&gt;
+&lt;li&gt;动机说明：我想写出一些文采奕奕的文字。。&lt;/li&gt;
+&lt;li&gt;外化动作结果：我在键盘上写了又删，想从指缝间扣出一个惊艳的词。&lt;/li&gt;
+&lt;li&gt;动机说明：我准备用录音机录环境的声音&lt;/li&gt;
+&lt;li&gt;外化动作结果：我将下雨时的淅淅沥沥装进了录音笔&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="避免结论先行与定义堆砌"&gt;避免结论先行与定义堆砌
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;原因：如果在段首就给出高度概括的结论或定义，后续的描写就变成了对结论的“补充说明”，失去了叙事的张力。结论应当作为文字的“余震”，由真实的细节铺垫后自然引出。&lt;/li&gt;
+&lt;li&gt;示例：&lt;/li&gt;
+&lt;li&gt;结论先行：自我的觉察是成长的关键，我今年深有体会。&lt;/li&gt;
+&lt;li&gt;画面引导：应该着重描写画面，通过细节真实的描写，让读者感受到结论。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="增加比喻意象的显影度与具象表达"&gt;增加比喻意象的“显影度”与具象表达
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;原因：仅有比喻的壳子（意象选择）而没有细节支撑，文字会显得虚浮。必须通过生活中的具体事物或细节来承载抽象概念，通过填充物理细节来加强真实感。&lt;/li&gt;
+&lt;li&gt;示例：&lt;/li&gt;
+&lt;li&gt;记忆就像一座长长的山脉。&lt;/li&gt;
+&lt;li&gt;记忆是一座山脉，近处的碎石清晰可见，远方则是起伏的青灰。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="删减模糊性修饰词实现坚定留白"&gt;删减模糊性修饰词实现“坚定留白”
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;原因： “大概、似乎、可能、某些”这类词在学术论文中是为了严谨，但在文学写作中会削弱文字的力量感，显得底气不足。删掉多余的修饰，用肯定的陈述能给读者留下更多的思考空间。&lt;/li&gt;
+&lt;li&gt;示例：&lt;/li&gt;
+&lt;li&gt;模糊语： “这种味道似乎带给我一些故乡的感觉。”&lt;/li&gt;
+&lt;li&gt;坚定留白： “这味道里藏着故乡。”&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>DOM学习记录</title><link>https://oddyti.com/post/dom-study/</link><pubDate>Mon, 11 Dec 2023 13:42:37 +0800</pubDate><guid>https://oddyti.com/post/dom-study/</guid><description>&lt;h2 id="domdocument-object-model"&gt;DOM(Document Object Model)
 &lt;/h2&gt;&lt;p&gt;DOM将网页所有内容都转换成了对象&lt;/p&gt;
 &lt;p&gt;Model表示对象之间的关系，如父子、后代等&lt;/p&gt;
 &lt;p&gt;网页中的每个对象都是一个节点(Node)&lt;/p&gt;
