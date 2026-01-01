@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LaTex on Oddyti的小站</title><link>https://oddyti.com/tags/latex/</link><description>Recent content in LaTex on Oddyti的小站</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>Oddyti</copyright><lastBuildDate>Sun, 05 Jan 2025 13:36:19 +0800</lastBuildDate><atom:link href="https://oddyti.com/tags/latex/index.xml" rel="self" type="application/rss+xml"/><item><title>TeXLive+ VSCode 安装与环境配置</title><link>https://oddyti.com/post/texlive/</link><pubDate>Sun, 05 Jan 2025 13:36:19 +0800</pubDate><guid>https://oddyti.com/post/texlive/</guid><description>&lt;p&gt;记录和介绍一下TeXLive + VSCode 安装与环境配置过程（Windows）&lt;/p&gt;
+&lt;h2 id="texlive安装"&gt;TeXLive安装
+&lt;/h2&gt;&lt;h3 id="概念区分"&gt;概念区分
+&lt;/h3&gt;&lt;p&gt;虽然已经使用LaTex写了许多实验报告和论文，但是对于这个大家族的许多概念名词有很多的混淆。所以先做一下概念区分（来源于GPT）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TeX&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;TeX 是一种由 Donald Knuth 开发的&lt;strong&gt;排版语言&lt;/strong&gt;，专门用于高质量的文字排版，尤其是数学公式和复杂文档。而Tex语言的文件后缀以.tex结尾，也是我们使用LaTex时文件的通用后缀。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;LaTeX&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;LaTeX 是基于 TeX 的宏包（或称为扩展），由 Leslie Lamport 开发，旨在简化 TeX 的使用。可以理解成扩展后的TeX，其底层仍然是TeX语言，并且文件仍然以.tex结尾。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TeX引擎&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;TeX 引擎是实际执行 TeX 语言代码的程序，负责将 TeX 文件编译为输出文件（如 PDF、DVI）。&lt;/p&gt;
+&lt;p&gt;常见的TeX引擎有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pdfTeX&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;XeTeX&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LuaTeX&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;TeX编译器&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;TeX 编译器是指用于调用 TeX 引擎并编译 TeX 文件的工具或命令。&lt;/p&gt;
+&lt;p&gt;常见 TeX 编译器：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pdflatex&lt;/code&gt;：
+&lt;ul&gt;
+&lt;li&gt;使用 pdfTeX 引擎，将 .tex 文件直接编译为 PDF。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;xelatex&lt;/code&gt;：
+&lt;ul&gt;
+&lt;li&gt;使用 XeTeX 引擎，支持 Unicode 和系统字体。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;lualatex&lt;/code&gt;：
+&lt;ul&gt;
+&lt;li&gt;使用 LuaTeX 引擎，支持 Lua 脚本和现代字体。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;latex&lt;/code&gt;：
+&lt;ul&gt;
+&lt;li&gt;使用传统 TeX 引擎，生成 DVI 文件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bibtex&lt;/code&gt; 和 &lt;code&gt;biber&lt;/code&gt;：
+&lt;ul&gt;
+&lt;li&gt;用于处理参考文献。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="texlive"&gt;TeXLive
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;TeX Live&lt;/strong&gt; 是一个跨平台的、全面的 TeX 发行版，它包含了 TeX 文档排版系统所需的所有核心工具、宏包、字体和文档。&lt;/p&gt;
+&lt;p&gt;如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;TeX 引擎&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;包括 &lt;code&gt;pdfTeX&lt;/code&gt;、&lt;code&gt;XeTeX&lt;/code&gt;、&lt;code&gt;LuaTeX&lt;/code&gt; 等，用于将 TeX 文件编译为 PDF 或其他格式。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LaTeX&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;LaTeX 是基于 TeX 的宏包，用于简化复杂文档的排版。TeX Live 包含了 LaTeX 的核心宏包和工具。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;宏包和工具&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;TeX Live 包含了数千个宏包（如 &lt;code&gt;graphicx&lt;/code&gt;、&lt;code&gt;amsmath&lt;/code&gt;、&lt;code&gt;hyperref&lt;/code&gt; 等），用于扩展 TeX 和 LaTeX 的功能。&lt;/li&gt;
+&lt;li&gt;还包含了许多工具，如 &lt;code&gt;BibTeX&lt;/code&gt;（参考文献管理）、&lt;code&gt;MakeIndex&lt;/code&gt;（索引生成）等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;字体&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;TeX Live 提供了大量字体支持，包括标准字体（如 Computer Modern）和扩展字体（如 OpenType 字体）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;文档和示例&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;TeX Live 包含了丰富的文档和示例文件，帮助用户学习和使用 TeX 和 LaTeX。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="texlive下载与安装"&gt;TeXLive下载与安装
+&lt;/h2&gt;&lt;h3 id="下载"&gt;下载
+&lt;/h3&gt;&lt;p&gt;TeXLive虽然官网有下载，但是推荐在镜像站下载。这里推荐&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class="link" href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/" target="_blank" rel="noopener"
+&gt;清华大学TeXLive镜像&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class="link" href="https://mirrors.zju.edu.cn/CTAN/systems/texlive/Images/" target="_blank" rel="noopener"
+&gt;浙江大学TeXLive镜像&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这里直接下载textlive2024.iso镜像即可&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://oddyti.com/post/texlive/image-20250105135330561.png"
+width="838"
+height="369"
+loading="lazy"
+alt="image-20250105135330561"
+class="gallery-image"
+data-flex-grow="227"
+data-flex-basis="545px"
+&gt;&lt;/p&gt;
+&lt;h3 id="安装"&gt;安装
+&lt;/h3&gt;&lt;p&gt;下载完成后，双击打开或者右键-选择&lt;code&gt;装载&lt;/code&gt;，然后能在资源管理器看到装载好的DVD驱动器（一般情况下会自动打开）&lt;/p&gt;
+&lt;p&gt;打开&lt;code&gt;install-tl-windows.bat&lt;/code&gt;脚本文件，即可开始安装&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://oddyti.com/post/texlive/image-20250105135611325.png"
+width="984"
+height="853"
+loading="lazy"
+alt="image-20250105135611325"
+class="gallery-image"
+data-flex-grow="115"
+data-flex-basis="276px"
+&gt;&lt;/p&gt;
+&lt;p&gt;打开后会自动打开一个cmd窗口，并跳出一个安装ui界面如下&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://oddyti.com/post/texlive/image-20250105135801291.png"
+width="1481"
+height="790"
+loading="lazy"
+alt="image-20250105135801291"
+class="gallery-image"
+data-flex-grow="187"
+data-flex-basis="449px"
+&gt;&lt;/p&gt;
+&lt;p&gt;这里可以点击&lt;code&gt;Advanced&lt;/code&gt;，看见更详细的安装配置，这里推荐修改两个地方&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;修改TEXDIR，即安装位置&lt;/li&gt;
+&lt;li&gt;取消勾选“安装TeXworks前端”（因为我们使用vscode作为编辑器，所以不再需要TeXworks）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://oddyti.com/post/texlive/image-20250105140000636.png"
+width="936"
+height="723"
+loading="lazy"
+alt="image-20250105140000636"
+class="gallery-image"
+data-flex-grow="129"
+data-flex-basis="310px"
+&gt;&lt;/p&gt;
+&lt;p&gt;然后点击安装。安装过程因人（电脑）而异，大概需要一个小时左右。&lt;/p&gt;
+&lt;h4 id="测试是否安装成功"&gt;测试是否安装成功
+&lt;/h4&gt;&lt;p&gt;安装完成后，可以打开命令行或PowerShell，输入&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;latex -v
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果出现以下输出，即说明安装成功&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;PS C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\X&lt;/span&gt;XX&amp;gt; latex -v
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pdfTeX 3.141592653-2.6-1.40.26 &lt;span class="o"&gt;(&lt;/span&gt;TeX Live 2024&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;kpathsea version 6.4.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Copyright &lt;span class="m"&gt;2024&lt;/span&gt; Han The Thanh &lt;span class="o"&gt;(&lt;/span&gt;pdfTeX&lt;span class="o"&gt;)&lt;/span&gt; et al.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;There is NO warranty. Redistribution of this software is
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;covered by the terms of both the pdfTeX copyright and
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;the Lesser GNU General Public License.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;For more information about these matters, see the file
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;named COPYING and the pdfTeX source.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Primary author of pdfTeX: Han The Thanh &lt;span class="o"&gt;(&lt;/span&gt;pdfTeX&lt;span class="o"&gt;)&lt;/span&gt; et al.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Compiled with libpng 1.6.43&lt;span class="p"&gt;;&lt;/span&gt; using libpng 1.6.43
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Compiled with zlib 1.3.1&lt;span class="p"&gt;;&lt;/span&gt; using zlib 1.3.1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Compiled with xpdf version 4.04
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;PS C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\X&lt;/span&gt;XX&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果提示无法识别，可能是因为环境变量没有配置好（课自行百度TeXLive配置环境变量）&lt;/p&gt;
+&lt;h2 id="vscode配置"&gt;VSCode配置
+&lt;/h2&gt;&lt;h3 id="安装latex-workshop插件"&gt;安装LaTex Workshop插件
+&lt;/h3&gt;&lt;p&gt;&lt;img src="https://oddyti.com/post/texlive/image-20250105145418297.png"
+width="1030"
+height="196"
+loading="lazy"
+alt="image-20250105145418297"
+class="gallery-image"
+data-flex-grow="525"
+data-flex-basis="1261px"
+&gt;&lt;/p&gt;
+&lt;h3 id="配置settingsjson文件"&gt;配置&lt;code&gt;settings.json&lt;/code&gt;文件
+&lt;/h3&gt;&lt;h4 id="latex编译工具链配置"&gt;LaTex编译工具链配置
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;LaTeX 编译工具链&lt;/strong&gt; 是指用于将 &lt;code&gt;.tex&lt;/code&gt; 源文件编译为最终输出文件（如 PDF）的一系列工具和步骤。要配置编译工具链，需要配置**工具（Tools）&lt;strong&gt;和&lt;/strong&gt;配方（Recipes）**两个部分。&lt;/p&gt;
+&lt;h6 id="tools工具"&gt;&lt;strong&gt;Tools（工具）&lt;/strong&gt;
+&lt;/h6&gt;&lt;p&gt;&lt;code&gt;Tools&lt;/code&gt; 是单个编译命令，例如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pdflatex&lt;/code&gt;：用于编译 &lt;code&gt;.tex&lt;/code&gt; 文件。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bibtex&lt;/code&gt;：用于处理参考文献。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;biber&lt;/code&gt;：用于处理 &lt;code&gt;biblatex&lt;/code&gt; 的参考文献。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;makeindex&lt;/code&gt;：用于生成索引。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;每个工具都有一个 &lt;code&gt;name&lt;/code&gt;、&lt;code&gt;command&lt;/code&gt; 和 &lt;code&gt;args&lt;/code&gt;（参数）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Recipes（配方）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Recipes&lt;/code&gt; 是一组工具的集合，定义了完整的编译流程。例如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一个典型的 LaTeX 编译配方可能包括：
+&lt;ol&gt;
+&lt;li&gt;运行 &lt;code&gt;pdflatex&lt;/code&gt; 生成 &lt;code&gt;.aux&lt;/code&gt; 文件。&lt;/li&gt;
+&lt;li&gt;运行 &lt;code&gt;bibtex&lt;/code&gt; 处理参考文献。&lt;/li&gt;
+&lt;li&gt;再次运行 &lt;code&gt;pdflatex&lt;/code&gt; 更新引用。&lt;/li&gt;
+&lt;li&gt;最后运行 &lt;code&gt;pdflatex&lt;/code&gt; 生成最终的 PDF。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这里我们使用&lt;code&gt;latexmk&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;latexmk&lt;/code&gt; 是一个非常强大的工具，可以自动处理 LaTeX 文档的多步编译（包括 &lt;code&gt;pdflatex&lt;/code&gt;、&lt;code&gt;bibtex&lt;/code&gt;、&lt;code&gt;biber&lt;/code&gt; 等），非常适合复杂的文档。&lt;/p&gt;
+&lt;p&gt;在配置文件中，配置了两个&lt;code&gt;latexmk&lt;/code&gt;的工具，分别基于xeLaTex和pdfLaTex&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;span class="lnt"&gt;28
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-js" data-lang="js"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;latex-workshop.latex.tools&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;XeLaTeXmk&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;command&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;latexmk&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;args&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;-xelatex&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;-synctex=1&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;-shell-escape&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;-interaction=nonstopmode&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;-file-line-error&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;%DOC%&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;pdfLaTeXmk&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;command&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;latexmk&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;args&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;-pdflatex&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;-synctex=1&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;-shell-escape&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;-interaction=nonstopmode&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;-file-line-error&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;%DOC%&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;然后配置两个配方&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-js" data-lang="js"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Latex编译工具链
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;latex-workshop.latex.recipes&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;XeLaTeXmk&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;tools&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;XeLaTeXmk&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;pdfLaTeXmk&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;tools&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;pdfLaTeXmk&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;配置好后，可以在LaTeX Workshop 插件中看到配置。使用时点击对应配方即可编译。LaTeX Workshop 默认会使用配置文件中定义的第一个配方进行编译。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://oddyti.com/post/texlive/image-20250105145906140.png"
+width="417"
+height="369"
+loading="lazy"
+alt="image-20250105145906140"
+class="gallery-image"
+data-flex-grow="113"
+data-flex-basis="271px"
+&gt;&lt;/p&gt;
+&lt;h4 id="其他配置"&gt;其他配置
+&lt;/h4&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;span class="lnt"&gt;28
+&lt;/span&gt;&lt;span class="lnt"&gt;29
+&lt;/span&gt;&lt;span class="lnt"&gt;30
+&lt;/span&gt;&lt;span class="lnt"&gt;31
+&lt;/span&gt;&lt;span class="lnt"&gt;32
+&lt;/span&gt;&lt;span class="lnt"&gt;33
+&lt;/span&gt;&lt;span class="lnt"&gt;34
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-js" data-lang="js"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Latex其他配置
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;latex-workshop.view.pdf.viewer&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;tab&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// pdf预览方式
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;latex-workshop.message.error.show&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// 是否显示错误信息
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;latex-workshop.message.warning.show&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// 是否显示警告信息
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;latex-workshop.latex.autoClean.run&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;onBuilt&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// 清理时删除的文件类型
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;latex-workshop.latex.clean.fileTypes&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;*.aux&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;*.bbl&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;*.blg&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;*.idx&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;*.ind&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;*.lof&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;*.lot&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;*.out&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;*.toc&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;*.acn&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;*.acr&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;*.alg&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;*.glg&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;*.glo&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;*.gls&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;*.ist&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;*.fls&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;*.log&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;*.fdb_latexmk&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;//从使用的包中自动补全命令和环境
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;latex-workshop.intellisense.package.enabled&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;//设置vscode编译tex文档时的默认编译链为上次使用
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;latex-workshop.latex.recipe.default&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;lastUsed&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;latex-workshop.latex.autoBuild.run&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;never&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;有注释，不做过多解释。&lt;/p&gt;</description></item></channel></rss>

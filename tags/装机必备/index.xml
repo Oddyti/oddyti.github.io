@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>装机必备 on Oddyti的小站</title><link>https://oddyti.com/tags/%E8%A3%85%E6%9C%BA%E5%BF%85%E5%A4%87/</link><description>Recent content in 装机必备 on Oddyti的小站</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>Oddyti</copyright><lastBuildDate>Tue, 31 Oct 2023 22:40:13 +0800</lastBuildDate><atom:link href="https://oddyti.com/tags/%E8%A3%85%E6%9C%BA%E5%BF%85%E5%A4%87/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows软件分享/新系统配置清单</title><link>https://oddyti.com/post/apps-share/</link><pubDate>Tue, 31 Oct 2023 22:40:13 +0800</pubDate><guid>https://oddyti.com/post/apps-share/</guid><description>&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;浏览器 - Edge&lt;/p&gt;
+&lt;p&gt;Win11自带。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Office全家桶&lt;/p&gt;
+&lt;p&gt;无须解释。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;QQ&lt;/p&gt;
+&lt;p&gt;无须解释。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;微信&lt;/p&gt;
+&lt;p&gt;无须解释。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;卸载软件 - &lt;a class="link" href="https://geekuninstaller.com/" target="_blank" rel="noopener"
+&gt;Geek Uninstaller - the best FREE uninstaller&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;免费&lt;/strong&gt;，一个非常小巧的卸载软件的软件，可以扫描到系统中几乎所有安装的软件，以及卸载后扫描清理注册表功能。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;视频播放 - &lt;a class="link" href="https://potplayer.daum.net/" target="_blank" rel="noopener"
+&gt;Potplayer&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;免费&lt;/strong&gt;，功能强大的播放器。建议换一个皮肤，默认皮肤太丑了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;写作 - &lt;a class="link" href="https://typora.io/" target="_blank" rel="noopener"
+&gt;Typora&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;收费&lt;/strong&gt;，好用的Markdown编辑器。搭配自己根据Drake修改的皮肤。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;工作 - &lt;a class="link" href="https://desktop.github.com/" target="_blank" rel="noopener"
+&gt;GitHub Desktop&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;免费&lt;/strong&gt;，Github仓库管理及Git管理，自从用了它，再也没有手敲过git指令。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;娱乐 - &lt;a class="link" href="https://music.163.com/#/download" target="_blank" rel="noopener"
+&gt;网易云音乐&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;免费&lt;/strong&gt;，听歌。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;工作 - &lt;a class="link" href="https://www.zotero.org/" target="_blank" rel="noopener"
+&gt;Zotero&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;免费&lt;/strong&gt;，论文管理+阅读，支持翻译插件（推荐&lt;a class="link" href="https://github.com/windingwind/zotero-pdf-translate" target="_blank" rel="noopener"
+&gt;zotero-pdf-translate&lt;/a&gt;），云同步（搭配坚果云使用）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;工作 - &lt;a class="link" href="https://code.visualstudio.com/" target="_blank" rel="noopener"
+&gt;Visual Studio Code&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;免费&lt;/strong&gt;，最好用的编辑器。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;压缩 - &lt;a class="link" href="https://en.bandisoft.com/bandizip/" target="_blank" rel="noopener"
+&gt;Bandizip&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;免费&lt;/strong&gt;，解压缩软件，轻量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;图像查看 - &lt;a class="link" href="https://en.bandisoft.com/honeyview/" target="_blank" rel="noopener"
+&gt;Honeyview&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;免费&lt;/strong&gt;，界面丑，但是好用，支持自定义鼠标和键盘操作。（如滚轮缩放）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;工作 - &lt;a class="link" href="https://www.anaconda.com/" target="_blank" rel="noopener"
+&gt;Anaconda&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;免费&lt;/strong&gt;，Python虚拟环境、包管理。装好记得配置系统环境变量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;工作 - &lt;a class="link" href="https://ww2.mathworks.cn/products/matlab.html" target="_blank" rel="noopener"
+&gt;MATLAB&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;收费&lt;/strong&gt;，无须解释。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;工作 - &lt;a class="link" href="https://github.com/PowerShell/PowerShell" target="_blank" rel="noopener"
+&gt;PowerShell 7&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;免费&lt;/strong&gt;，建议升级自带的Powershell 5到Powershell 7。配置PSReadLine插件实现补全。不建议Oh My Posh美化，加载配置文件太慢。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;工作 - &lt;a class="link" href="https://git-scm.com/" target="_blank" rel="noopener"
+&gt;Git&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;免费&lt;/strong&gt;，无须解释。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;截图 - &lt;a class="link" href="https://www.snipaste.com/" target="_blank" rel="noopener"
+&gt;Snipaste&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;小巧好用的截图软件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;系统 - &lt;a class="link" href="https://eartrumpet.app/" target="_blank" rel="noopener"
+&gt;EarTrumpet&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;可以分软件调整音量的轻量软件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;系统 - &lt;a class="link" href="https://capslox.com/capslock-plus/" target="_blank" rel="noopener"
+&gt;Capslock+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;免费&lt;/strong&gt;，赋予&lt;code&gt;Capslock&lt;/code&gt;类似于&lt;code&gt;Shift&lt;/code&gt;一样的功能，可以组合不同的快捷键。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
