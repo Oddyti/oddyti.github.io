@@ -4,8 +4,8 @@ date = 2025-02-22T21:09:30+08:00
 draft = false
 description = '学习Java内存模型(JMM)的总结，包括运行时数据区、顺序一致性模型、happens-before原则、volatile关键字、锁机制、synchronized关键字'
 slug = 'jmm'
-tags = ['JAVA并发']
-categories = ['技术']
+tags = ['JAVA']
+categories = ['弄斧']
 image = ''
 license = false
 +++

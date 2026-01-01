@@ -4,8 +4,8 @@ date = 2024-10-20T23:18:53+08:00
 draft = false
 description = '专辑《牛窝坑之子》推荐'
 slug = 'niuwokeng'
-tags = ['音乐','安利']
-categories = ['分享']
+tags = ['推歌','牛窝坑之子']
+categories = ['递手']
 image = 'new.png'
 license = false
 

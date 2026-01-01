@@ -4,8 +4,8 @@ date = 2024-12-12T10:41:27+08:00
 draft = false
 description = '简单总结了常见的排序算法'
 slug = 'sort-methods'
-tags = ['算法']
-categories = ['技术']
+tags = ['排序算法']
+categories = ['弄斧']
 image = ''
 license = false
 +++

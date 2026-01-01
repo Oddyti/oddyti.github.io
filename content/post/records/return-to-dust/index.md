@@ -4,8 +4,8 @@ date = 2022-09-15T14:20:41+08:00
 draft = false
 description = '观看于22年秋，看完《隐入尘烟》后的一些想法'
 slug = 'return-to-dust'
-tags = ['电影']
-categories = ['记录']
+tags = ['电影','隐入尘烟','影评']
+categories = ['闲逛']
 image = ''
 license = false
 

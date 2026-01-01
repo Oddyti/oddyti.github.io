@@ -4,8 +4,8 @@ date = 2025-11-23T17:35:27+08:00
 draft = false
 description = '写写我的爱好以及相关'
 slug = 'hobbies'
-tags = ['']
-categories = ['随记']
+tags = ['成长','乐理']
+categories = ['出神']
 image = ''
 license = false
 

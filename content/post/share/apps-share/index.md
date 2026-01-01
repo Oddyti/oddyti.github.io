@@ -4,8 +4,8 @@ date = 2023-10-31T22:40:13+08:00
 draft = false
 description = '最近给工位电脑配置的了新的工作环境，所以记录一下新工作环境需要装的软件。'
 slug = 'apps-share'
-tags = ['音乐','安利']
-categories = ['分享']
+tags = ['装机必备']
+categories = ['递手']
 image = ''
 license = false
 +++

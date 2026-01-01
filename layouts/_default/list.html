@@ -54,28 +54,90 @@
         {{- $subsections = slice -}}
     {{- end -}}
 
-    {{- with $subsections -}}
-        <aside>
-            <h2 class="section-title">{{ T "list.subsection" (len $subsections) }}</h2>
-            <div class="subsection-list">
-                <div class="article-list--tile">
-                    {{ range . }}
-                        {{ partial "article-list/tile" (dict "context" . "size" "250x150" "Type" "section") }}
-                    {{ end }}
-                </div>
+    {{- /* Check if this is a tags taxonomy page - display as tag cloud */ -}}
+    {{- if and (eq .Kind "taxonomy") (eq .Data.Singular "tag") -}}
+        <section class="widget tagCloud tagCloud-page">
+            <div class="tagCloud-tags" id="tagCloudContainer">
+                {{- $tags := .Site.Taxonomies.tags.ByCount -}}
+                {{- $maxCount := 0 -}}
+                {{- range $tags -}}
+                    {{- if gt .Count $maxCount -}}
+                        {{- $maxCount = .Count -}}
+                    {{- end -}}
+                {{- end -}}
+                {{- range $tags -}}
+                    {{- $fontSize := "tag-size-xs" -}}
+                    {{- if gt $maxCount 0 -}}
+                        {{- $count := .Count -}}
+                        {{- $countTimes100 := mul $count 100 -}}
+                        {{- $maxTimes80 := mul $maxCount 80 -}}
+                        {{- $maxTimes60 := mul $maxCount 60 -}}
+                        {{- $maxTimes40 := mul $maxCount 40 -}}
+                        {{- $maxTimes20 := mul $maxCount 20 -}}
+                        {{- if ge $countTimes100 $maxTimes80 -}}
+                            {{- $fontSize = "tag-size-xl" -}}
+                        {{- else if ge $countTimes100 $maxTimes60 -}}
+                            {{- $fontSize = "tag-size-l" -}}
+                        {{- else if ge $countTimes100 $maxTimes40 -}}
+                            {{- $fontSize = "tag-size-m" -}}
+                        {{- else if ge $countTimes100 $maxTimes20 -}}
+                            {{- $fontSize = "tag-size-s" -}}
+                        {{- end -}}
+                    {{- end -}}
+                    {{- $title := .Page.Title -}}
+                    {{- $titleLen := len $title -}}
+                    {{- $colorIndex := mod $titleLen 10 -}}
+                    <a href="{{ .Page.RelPermalink }}" class="tag-item {{ $fontSize }} tag-color-{{ $colorIndex }}" data-title="{{ $title }}">
+                        {{ $title }}
+                    </a>
+                {{- end -}}
             </div>
-        </aside>
-    {{- end -}}
-    
-    {{/* List only pages that are not a subsection */}}
-    {{ $paginator := .Paginate $pages }}
-    <section class="article-list--compact">
-        {{ range $paginator.Pages }}
-            {{ partial "article-list/compact" . }}
-        {{ end }}
-    </section>
+        </section>
+        <script>
+            (function() {
+                const container = document.getElementById('tagCloudContainer');
+                if (container) {
+                    const tags = Array.from(container.children);
+                    // Seeded random number generator
+                    let seed = 9527; // Fixed seed for deterministic randomness
+                    function seededRandom() {
+                        seed = (seed * 9301 + 49297) % 233280;
+                        return seed / 233280;
+                    }
+                    // Fisher-Yates shuffle algorithm with seeded random
+                    for (let i = tags.length - 1; i > 0; i--) {
+                        const j = Math.floor(seededRandom() * (i + 1));
+                        [tags[i], tags[j]] = [tags[j], tags[i]];
+                    }
+                    // Re-append tags in shuffled order
+                    tags.forEach(tag => container.appendChild(tag));
+                }
+            })();
+        </script>
+    {{- else -}}
+        {{- with $subsections -}}
+            <aside>
+                <h2 class="section-title">{{ T "list.subsection" (len $subsections) }}</h2>
+                <div class="subsection-list">
+                    <div class="article-list--tile">
+                        {{ range . }}
+                            {{ partial "article-list/tile" (dict "context" . "size" "250x150" "Type" "section") }}
+                        {{ end }}
+                    </div>
+                </div>
+            </aside>
+        {{- end -}}
+        
+        {{/* List only pages that are not a subsection */}}
+        {{ $paginator := .Paginate $pages }}
+        <section class="article-list--compact">
+            {{ range $paginator.Pages }}
+                {{ partial "article-list/compact" . }}
+            {{ end }}
+        </section>
 
-    {{- partial "pagination.html" . -}}
+        {{- partial "pagination.html" . -}}
+    {{- end -}}
 
     {{ partialCached "footer/footer" . }}
 {{ end }}

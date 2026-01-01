@@ -4,8 +4,8 @@ date = 2021-01-30T17:04:30+08:00
 draft = false
 description = '记录记录从小玩大的游戏'
 slug = 'child-hood-games'
-tags = ['回忆']
-categories = ['游戏']
+tags = ['游戏','回忆']
+categories = ['闲逛']
 image = 'cover.jpg'
 license = false
 +++

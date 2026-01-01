@@ -4,8 +4,8 @@ date = 2021-04-06T15:16:53+08:00
 draft = true
 description = '一次夜行感悟'
 slug = 'far-away'
-tags = ['生活']
-categories = ['随记']
+tags = ['随笔']
+categories = ['出神']
 image = 'cover.jpg'
 license = false
 +++

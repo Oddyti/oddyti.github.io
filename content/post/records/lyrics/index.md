@@ -4,8 +4,8 @@ date = 2024-10-18T09:57:44+08:00
 draft = false
 description = '一些歌词'
 slug = ''
-tags = ['音乐']
-categories = ['焦点']
+tags = ['']
+categories = ['闲逛']
 image = ''
 license = false
 

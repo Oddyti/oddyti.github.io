@@ -4,8 +4,8 @@ date = 2023-10-30T14:43:47+08:00
 draft = false
 description = '最优理论算法课程作业'
 slug = 'genetic-algorithm'
-tags = ['最优化算法']
-categories = ['学习记录']
+tags = ['最优化算法','遗传算法']
+categories = ['赶路']
 image = ''
 license = false
 

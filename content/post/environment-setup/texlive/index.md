@@ -4,14 +4,11 @@ date = 2025-01-05T13:36:19+08:00
 draft = false
 description = '配置TeXLive+ VSCode安装与配置过程'
 slug = 'texlive'
-tags = ['环境配置']
-categories = ['技术']
+tags = ['LaTex','环境配置']
+categories = ['弄斧']
 image = ''
 license = false
-
 +++
-
-
 
 记录和介绍一下TeXLive + VSCode 安装与环境配置过程（Windows）
 

@@ -60,3 +60,60 @@
 .social-menu li a {
     fill: var(--body-text-color);
 }
+
+/* Tag cloud page - different background colors and font sizes based on tag count */
+.main .tagCloud-page .tagCloud-tags {
+    .tag-item {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 5px 8px;
+        border-radius: var(--tag-border-radius);
+        color: #fff !important;
+        text-decoration: none;
+        font-weight: 500;
+        transition: opacity 0.3s ease, transform 0.2s ease;
+        line-height: 1;
+        
+        &.tag-size-xs {
+            font-size: 1.2rem;
+            padding: 6px 12px;
+        }
+        
+        &.tag-size-s {
+            font-size: 1.5rem;
+            padding: 7px 14px;
+        }
+        
+        &.tag-size-m {
+            font-size: 1.8rem;
+            padding: 8px 16px;
+        }
+        
+        &.tag-size-l {
+            font-size: 2.2rem;
+            padding: 10px 20px;
+        }
+        
+        &.tag-size-xl {
+            font-size: 2.6rem;
+            padding: 12px 24px;
+        }
+        
+        /* Different background colors for tags - softer, less bright colors */
+        &.tag-color-0 { background-color: #72aa65; }  /* softer green */
+        &.tag-color-1 { background-color: #c86a7a; }  /* softer pink */
+        &.tag-color-2 { background-color: #0168a0; }  /* softer blue */
+        &.tag-color-3 { background-color: #E97F4A; }  /* softer yellow */
+        &.tag-color-4 { background-color: #5a58b8; }  /* softer purple */
+        &.tag-color-5 { background-color: #53a97e; }  /* darker green */
+        &.tag-color-6 { background-color: #b85a6a; }  /* darker pink */
+        &.tag-color-7 { background-color: #015a8a; }  /* darker blue */
+        &.tag-color-8 { background-color: #e8bf61; }  /* darker yellow */
+        &.tag-color-9 { background-color: #4d4ba0; }  /* darker purple */
+        
+        &:hover {
+            opacity: 0.85;
+        }
+    }
+}

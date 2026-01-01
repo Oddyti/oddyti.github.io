@@ -5,7 +5,7 @@ draft = false
 description = '像素画尝试，画了BMW M3 E46'
 slug = 'pixel-art-M3'
 tags = ['像素画']
-categories = ['兴趣']
+categories = ['闲逛']
 image = 'bmw-m3_2.png'
 license = false
 +++

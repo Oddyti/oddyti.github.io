@@ -5,7 +5,7 @@ draft = false
 description = '学习JS时的笔记'
 slug = 'js-study'
 tags = ['JavaScript']
-categories = ['学习记录']
+categories = ['赶路']
 image = 'JS.png'
 license = false
 +++

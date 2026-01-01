@@ -4,8 +4,8 @@ date = 2024-01-26T21:20:28+08:00
 draft = false
 description = '记录第一次爬午潮山'
 slug = 'wuchao'
-tags = ['游山玩水']
-categories = ['记录']
+tags = ['徒步','午潮山']
+categories = ['闲逛']
 image = '呆坐3.jpg'
 license = false
 

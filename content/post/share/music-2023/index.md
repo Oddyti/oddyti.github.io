@@ -4,8 +4,8 @@ date = 2024-01-01T15:51:57+08:00
 draft = false
 description = '4首音乐推荐'
 slug = 'music-2023'
-tags = ['音乐','安利']
-categories = ['分享']
+tags = ['推歌']
+categories = ['递手']
 image = 'bg.png'
 license = false
 +++

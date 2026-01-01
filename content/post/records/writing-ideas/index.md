@@ -4,8 +4,8 @@ date = 2024-10-06T22:00:18+08:00
 draft = false
 description = '偶然看见了《666件可写的事》，觉得很有趣，可以提供很多让我下笔或思考的主题，也顺当练练字。自己也会甄选或者增加一些话题。就把目录放在这里。'
 slug = 'writing-ideas'
-tags = ['趣事']
-categories = ['随记']
+tags = ['']
+categories = ['出神']
 image = ''
 license = false
 +++

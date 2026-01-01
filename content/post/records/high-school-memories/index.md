@@ -4,8 +4,8 @@ date = 2021-03-21T14:25:49+08:00
 draft = true
 description = '再看一些高中的随笔'
 slug = 'high-school-memories'
-tags = ['回忆']
-categories = ['随记']
+tags = ['回忆','生死','碎碎念']
+categories = ['出神']
 image = ''
 license = false
 +++

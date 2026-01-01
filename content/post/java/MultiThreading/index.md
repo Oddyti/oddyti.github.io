@@ -4,8 +4,8 @@ date = 2025-02-20T17:31:03+08:00
 draft = false
 description = '学习Java多线程的总结'
 slug = 'multi-threading'
-tags = ['JAVA并发']
-categories = ['技术']
+tags = ['JAVA']
+categories = ['弄斧']
 image = ''
 license = false
 +++

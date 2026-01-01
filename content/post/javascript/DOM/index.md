@@ -5,7 +5,7 @@ draft = false
 description = '学习DOM时的笔记'
 slug = 'DOM-study'
 tags = ['DOM']
-categories = ['学习记录']
+categories = ['赶路']
 image = ''
 license = false
 +++
