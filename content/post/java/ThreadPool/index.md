@@ -5,7 +5,7 @@ draft = false
 description = '学习Java线程池(Thread Pool)的总结，主要包括ThreadPoolExecutor类的介绍，Excutors类介绍'
 slug = 'thread-pool'
 tags = ['JAVA']
-categories = ['弄斧']
+categories = ['行囊']
 image = ''
 license = false
 +++

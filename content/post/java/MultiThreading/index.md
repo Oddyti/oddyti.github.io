@@ -5,7 +5,7 @@ draft = false
 description = '学习Java多线程的总结'
 slug = 'multi-threading'
 tags = ['JAVA']
-categories = ['弄斧']
+categories = ['行囊']
 image = ''
 license = false
 +++

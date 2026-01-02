@@ -5,7 +5,7 @@ draft = false
 description = '如题'
 slug = 'lambda'
 tags = ['JAVA']
-categories = ['弄斧']
+categories = ['行囊']
 image = ''
 license = false
 +++

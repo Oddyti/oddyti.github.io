@@ -5,7 +5,7 @@ draft = false
 description = '最优理论算法课程作业'
 slug = 'heuristically-search'
 tags = ['最优化算法','启发式搜索']
-categories = ['赶路']
+categories = ['行囊']
 image = ''
 license = false
 

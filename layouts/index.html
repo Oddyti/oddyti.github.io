@@ -1,15 +1,115 @@
 {{ define "main" }}
-    {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-    {{ $filtered := where $pages "Params.hidden" "!=" true }}
-    {{ $pag := .Paginate ($filtered) }}
+    <section class="homepage-cards">
+        <!-- 欢迎 Banner 卡片 -->
+        {{ if .Site.Params.homepage.welcome.enabled }}
+            {{ $welcomePage := .Site.GetPage "/page/welcome" }}
+            {{ if $welcomePage }}
+                <div class="homepage-card welcome-banner">
+                    {{ with .Site.Params.homepage.welcome.image }}
+                        <div class="card-image">
+                            <img src="{{ . }}" alt="Welcome Banner">
+                        </div>
+                    {{ end }}
+                    <div class="card-content">
+                        <h1 class="card-title">{{ $welcomePage.Title }}</h1>
+                        <div class="card-text">{{ $welcomePage.Content }}</div>
+                    </div>
+                </div>
+            {{ end }}
+        {{ end }}
 
-    <section class="article-list">
-        {{ range $index, $element := $pag.Pages }}
-            {{ partial "article-list/default" . }}
+        <!-- 自我介绍卡片 -->
+        {{ if .Site.Params.homepage.about.enabled }}
+            {{ $aboutPage := .Site.GetPage "/page/about" }}
+            {{ if $aboutPage }}
+                <div class="homepage-card about-card">
+                    <div class="card-content">
+                        <h2 class="card-title">{{ $aboutPage.Title }}</h2>
+                        <div class="card-text">{{ $aboutPage.Content }}</div>
+                    </div>
+                </div>
+            {{ end }}
+        {{ end }}
+
+        <!-- 博客指引卡片 -->
+        {{ if .Site.Params.homepage.guide.enabled }}
+            <div class="homepage-card guide-card">
+                <div class="card-content">
+                    {{ with .Site.Params.homepage.guide.title }}
+                        <h2 class="card-title">{{ . }}</h2>
+                    {{ end }}
+                    {{ with .Site.Params.homepage.guide.items }}
+                        <div class="guide-items">
+                            {{ range . }}
+                                {{ $item := . }}
+                                {{ with $item.link }}
+                                    <a href="{{ .url }}" class="guide-item">
+                                        {{ with $item.icon }}
+                                            <div class="guide-icon">{{ partial "helper/icon" . }}</div>
+                                        {{ end }}
+                                        <div class="guide-content">
+                                            {{ with $item.title }}
+                                                <h3 class="guide-title">{{ . }}</h3>
+                                            {{ end }}
+                                            {{ with $item.description }}
+                                                <p class="guide-description">{{ . }}</p>
+                                            {{ end }}
+                                        </div>
+                                    </a>
+                                {{ else }}
+                                    <div class="guide-item">
+                                        {{ with $item.icon }}
+                                            <div class="guide-icon">{{ partial "helper/icon" . }}</div>
+                                        {{ end }}
+                                        <div class="guide-content">
+                                            {{ with $item.title }}
+                                                <h3 class="guide-title">{{ . }}</h3>
+                                            {{ end }}
+                                            {{ with $item.description }}
+                                                <p class="guide-description">{{ . }}</p>
+                                            {{ end }}
+                                        </div>
+                                    </div>
+                                {{ end }}
+                            {{ end }}
+                        </div>
+                    {{ end }}
+                </div>
+            </div>
+        {{ end }}
+
+        <!-- 友链卡片 -->
+        {{ if .Site.Params.homepage.links.enabled }}
+            {{ $linksPage := .Site.GetPage "/page/links" }}
+            {{ if and $linksPage $linksPage.Params.links }}
+                <div class="homepage-card links-card">
+                    <div class="card-content">
+                        <h2 class="card-title">{{ $linksPage.Title }}</h2>
+                        <div class="links-list">
+                            {{ range $linksPage.Params.links }}
+                                {{ $link := . }}
+                                <a href="{{ $link.website }}" target="_blank" rel="noopener" class="link-item">
+                                    {{ with $link.image }}
+                                        <div class="link-image">
+                                            <img src="{{ . }}" alt="{{ $link.title }}" loading="lazy">
+                                        </div>
+                                    {{ end }}
+                                    <div class="link-content">
+                                        <h3 class="link-title">{{ $link.title }}</h3>
+                                        {{ with $link.description }}
+                                            <p class="link-description">{{ . }}</p>
+                                        {{ end }}
+                                    </div>
+                                </a>
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+            {{ end }}
         {{ end }}
     </section>
-    {{- partial "pagination.html" . -}}
 
+    <!-- 评论区 -->
     {{ if not (eq .Params.comments false) }}
         {{ partial "comments/include" . }}
     {{ end }}

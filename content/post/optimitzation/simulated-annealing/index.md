@@ -5,7 +5,7 @@ draft = false
 description = '最优理论算法课程作业'
 slug = 'simulated-annealing'
 tags = ['最优化算法','退火算法']
-categories = ['赶路']
+categories = ['行囊']
 image = ''
 license = false
 

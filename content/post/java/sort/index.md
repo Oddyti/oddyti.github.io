@@ -5,7 +5,7 @@ draft = false
 description = '简单总结了常见的排序算法'
 slug = 'sort-methods'
 tags = ['排序算法']
-categories = ['弄斧']
+categories = ['行囊']
 image = ''
 license = false
 +++

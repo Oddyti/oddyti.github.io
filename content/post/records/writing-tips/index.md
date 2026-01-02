@@ -5,7 +5,7 @@ draft = false
 description = '经常与 Gemini 老师讨论如何提升文笔，于是将一些讨论后的结果总结在此。'
 slug = 'writing-tips'
 tags = ['写作']
-categories = ['赶路']
+categories = ['行囊']
 image = ''
 license = false
 +++

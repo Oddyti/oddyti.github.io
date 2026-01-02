@@ -1,61 +1,73 @@
+# ============================================
+# 基础配置
+# ============================================
 baseurl: https://oddyti.com/
 languageCode: zh-cn
 theme: hugo-theme-stack
-# paginate: 14 # 文章达到分页数量
-pagination:
-    pagerSize: 14
-title: Oddyti的小站
+title: 余地
 copyright: Oddyti
 
+# ============================================
+# 语言配置
+# ============================================
 languages:
-    # en:
-    #     languageName: English
-    #     title: Example Site
-    #     weight: 1
-    #     params:
-    #         description: Example description
     zh-cn:
         languageName: 中文
-        title: Oddyti的小站
+        title: 余地
         weight: 2
         params:
             description: Oddyti的小站
 
-
-# Change it to your Disqus shortname before using
-disqusShortname: hugo-theme-stack
-
-# GA Tracking ID
-googleAnalytics:
-
-# Theme i18n support
-# Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
+# 主题国际化支持
+# 可用值: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
 DefaultContentLanguage: zh-cn
 
-# Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
-# This will make .Summary and .WordCount behave correctly for CJK languages.
+# 如果默认语言是中文/日文/韩文，设置为 true
+# 这将使 .Summary 和 .WordCount 对 CJK 语言正确工作
 hasCJKLanguage: true
 
+# ============================================
+# URL 永久链接配置
+# ============================================
 permalinks:
-    post: /post/:slug/
-    page: /:slug/
+    post: /post/:slug/      # 文章 URL 格式
+    page: /:slug/           # 页面 URL 格式
+    posts: /posts/          # 文章列表页 URL
 
+# ============================================
+# 主题参数配置
+# ============================================
 params:
+    # 主要内容区域（文章所在的 section）
     mainSections:
         - post
+    
+    # 特色图片字段名
     featuredImageField: image
+    
+    # RSS 是否包含完整内容
     rssFullContent: true
+    
+    # 网站图标
     favicon: /favicon2.ico
-    # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
 
+    # ============================================
+    # 页脚配置
+    # ============================================
     footer:
         since: 2020
         customText:
 
+    # ============================================
+    # 日期格式配置
+    # ============================================
     dateFormat:
-        published: Jan 02, 2006
-        lastUpdated: Jan 02, 2006 15:04 MST
+        published: 2006年1月2日
+        lastUpdated: 2006年1月2日 15:04
 
+    # ============================================
+    # 侧边栏配置
+    # ============================================
     sidebar:
         emoji:
         subtitle: 是谁来自山川湖海，却囿于昼夜厨房与爱。
@@ -64,19 +76,25 @@ params:
             local: true
             src: img/snoopy.jpg
 
-
+    # ============================================
+    # 文章配置
+    # ============================================
     article:
-        math: true
-        toc: true
-        readingTime: true
+        math: true              # 数学公式支持
+        toc: true               # 目录支持
+        readingTime: true       # 阅读时间
         license:
             enabled: true
             default: Licensed under CC BY-NC-SA 4.0
 
+    # ============================================
+    # 评论系统配置
+    # ============================================
     comments:
         enabled: true
         provider: giscus
 
+        # Disqus 配置
         disqusjs:
             shortname:
             apiUrl:
@@ -84,16 +102,19 @@ params:
             admin:
             adminLabel:
 
+        # Utterances 配置
         utterances:
             repo:
             issueTerm: pathname
             label:
 
+        # Remark42 配置
         remark42:
             host:
             site:
             locale:
 
+        # Vssue 配置
         vssue:
             platform:
             owner:
@@ -102,7 +123,7 @@ params:
             clientSecret:
             autoCreateIssue: false
 
-        # Waline client configuration see: https://waline.js.org/en/reference/component.html
+        # Waline 配置
         waline:
             serverURL:
             lang:
@@ -117,18 +138,20 @@ params:
                 admin: Admin
                 placeholder:
 
+        # Twikoo 配置
         twikoo:
             envId:
             region:
             path:
             lang:
 
-        # See https://cactus.chat/docs/reference/web-client/#configuration for description of the various options
+        # Cactus 配置
         cactus:
             defaultHomeserverUrl: "https://matrix.cactus.chat:8448"
             serverName: "cactus.chat"
-            siteName: "" # You must insert a unique identifier here matching the one you registered (See https://cactus.chat/docs/getting-started/quick-start/#register-your-site)
+            siteName: ""
 
+        # Giscus 配置（当前使用）
         giscus:
             repo: "Oddyti/Giscus"
             repoID: "R_kgDOKmaUDg"
@@ -140,6 +163,7 @@ params:
             reactionsEnabled: 1
             emitMetadata: 0
 
+        # Gitalk 配置
         gitalk:
             owner:
             admin:
@@ -147,10 +171,58 @@ params:
             clientID:
             clientSecret:
 
+        # Cusdis 配置
         cusdis:
             host:
             id:
+
+    # ============================================
+    # 主页卡片配置
+    # ============================================
+    homepage:
+        # 欢迎横幅卡片
+        welcome:
+            enabled: true
+        
+        # 关于我卡片
+        about:
+            enabled: true
+        
+        # 博客指引卡片
+        guide:
+            enabled: true
+            title: "指路"
+            items:
+                - icon: user
+                  title: "文章"
+                  description: "所有的内容都在这儿了"
+                  link:
+                      url: "/posts"
+                - icon: categories
+                  title: "分类"
+                  description: "好不容易分门别类"
+                  link:
+                      url: "/categories"
+                - icon: archives
+                  title: "归档"
+                  description: "说实话按照年份统计显得我没什么内容"
+                  link:
+                      url: "/archives"
+                - icon: tag
+                  title: "标签"
+                  description: "分类看不懂的话，来这儿看看"
+                  link:
+                      url: "/tags"
+        
+        # 友链卡片
+        links:
+            enabled: true
+
+    # ============================================
+    # 侧边栏小部件配置
+    # ============================================
     widgets:
+        # 主页侧边栏小部件
         homepage:
             - type: search
             - type: archives
@@ -162,43 +234,57 @@ params:
             - type: tag-cloud
               params:
                   limit: 20
+        
+        # 文章页侧边栏小部件
         page:
             - type: toc
-            
 
+    # ============================================
+    # Open Graph 配置（社交媒体分享）
+    # ============================================
     opengraph:
         twitter:
-            # Your Twitter username
             site:
-
-            # Available values: summary, summary_large_image
             card: summary_large_image
 
+    # ============================================
+    # 默认图片配置
+    # ============================================
     defaultImage:
         opengraph:
             enabled: false
             local: false
             src:
 
+    # ============================================
+    # 颜色方案配置
+    # ============================================
     colorScheme:
-        # Display toggle
-        toggle: true
+        toggle: true        # 是否显示主题切换按钮
+        default: auto       # 默认主题: auto, light, dark
 
-        # Available values: auto, light, dark
-        default: auto
-
+    # ============================================
+    # 图片处理配置
+    # ============================================
     imageProcessing:
         cover:
-            # enabled: true
             enabled: false
         content:
-            # enabled: true
             enabled: false
 
-### Custom menu
-### See https://docs.stack.jimmycai.com/configuration/custom-menu.html
-### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter
+# ============================================
+# 分页配置
+# ============================================
+pagination:
+    pagerSize: 14
+
+# ============================================
+# 自定义菜单配置
+# ============================================
+# 参考: https://docs.stack.jimmycai.com/configuration/custom-menu.html
+# 要移除 about, archive 和 search 页面菜单项，请从它们的 FrontMatter 中删除 `menu` 字段
 menu:
+    # 主导航菜单
     main: 
         - identifier: home
           name: 主页
@@ -206,6 +292,13 @@ menu:
           weight: -100
           params:
             icon: home
+
+        - identifier: posts
+          name: 文章
+          url: /posts
+          weight: -95
+          params:
+            icon: user
 
         - identifier: categories
           name: 分类
@@ -235,14 +328,8 @@ menu:
           params:
             icon: link
 
+    # 社交媒体链接
     social:
-        # - identifier: github
-        #   name: GitHub
-        #   url: https://github.com/Oddyti
-        #   weight: -100
-        #   params:
-        #       icon: github
-
         - identifier: bilibili
           name: Biligili
           url: https://space.bilibili.com/51329228
@@ -250,12 +337,23 @@ menu:
           params:
               icon: bilibili
               
+        - identifier: github
+          name: Github
+          url: https://github.com/Oddyti
+          weight: -80
+          params:
+              icon: github
+              
         - identifier: netease-cloud
           name: 网易云
           url: https://music.163.com/#/user/home?id=556522560
           weight: -80
           params:
               icon: netease-cloud
+
+# ============================================
+# 相关文章配置
+# ============================================
 related:
     includeNewer: true
     threshold: 60
@@ -263,19 +361,25 @@ related:
     indices:
         - name: tags
           weight: 100
-
         - name: categories
           weight: 200
 
+# ============================================
+# Markup 配置（Markdown 渲染）
+# ============================================
 markup:
     goldmark:
         renderer:
-            ## Set to true if you have HTML content inside Markdown
+            # 如果 Markdown 中包含 HTML 内容，设置为 true
             unsafe: true
+    
+    # 目录配置
     tableOfContents:
         endLevel: 4
         ordered: true
         startLevel: 2
+    
+    # 代码高亮配置
     highlight:
         noClasses: false
         codeFences: true
@@ -284,3 +388,12 @@ markup:
         lineNos: true
         lineNumbersInTable: true
         tabWidth: 4
+
+# ============================================
+# 其他配置
+# ============================================
+# Disqus 短名称（已弃用，使用 comments.provider 配置）
+disqusShortname: hugo-theme-stack
+
+# Google Analytics 跟踪 ID
+googleAnalytics:

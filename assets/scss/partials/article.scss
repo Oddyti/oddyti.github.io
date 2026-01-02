@@ -127,8 +127,16 @@
     }
 }
 
-.article-category,
-.article-tags {
+.article-top-meta{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.article-category{
     display: flex;
     gap: 10px;
 
@@ -145,6 +153,19 @@
             color: var(--accent-color-text);
             background-color: var(--accent-color-darker);
         }
+    }
+}
+
+.article-tags {
+    display: flex;
+    gap: 10px;
+
+    a {
+        color: var(--card-text-color-main);
+        padding: 4px 1px;
+        border-bottom: 1px solid var(--card-text-color-secondary);
+        // font-style: italic;
+        font-size: 1.5rem;
     }
 }
 

@@ -5,7 +5,7 @@ draft = false
 description = '配置TeXLive+ VSCode安装与配置过程'
 slug = 'texlive'
 tags = ['LaTex','环境配置']
-categories = ['弄斧']
+categories = ['行囊']
 image = ''
 license = false
 +++
