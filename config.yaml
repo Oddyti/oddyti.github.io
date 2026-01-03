@@ -74,7 +74,7 @@ params:
         avatar:
             enabled: true
             local: true
-            src: img/snoopy.jpg
+            src: img/avatar.png
 
     # ============================================
     # 文章配置
