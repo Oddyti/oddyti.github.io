@@ -331,7 +331,7 @@ menu:
     # 社交媒体链接
     social:
         - identifier: bilibili
-          name: Biligili
+          name: Bilibili
           url: https://space.bilibili.com/51329228
           weight: -90
           params:
