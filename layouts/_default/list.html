@@ -10,7 +10,8 @@
 
         <div class="section-card">
             <div class="section-details">
-                <h3 class="section-count">{{ T "list.page" (len .Pages) }}</h3>
+                {{- $notHiddenCount := len (where .Pages "Params.hidden" "!=" true) -}}
+                <h3 class="section-count">{{ T "list.page" $notHiddenCount }}</h3>
                 <h1 class="section-term">{{ .Title }}</h1>
                 {{ with .Params.description }}
                     <h2 class="section-description">{{ . }}</h2>
@@ -129,7 +130,8 @@
         {{- end -}}
         
         {{/* List only pages that are not a subsection */}}
-        {{ $paginator := .Paginate $pages }}
+        {{ $notHidden := where $pages "Params.hidden" "!=" true }}
+        {{ $paginator := .Paginate $notHidden }}
         <section class="article-list--compact">
             {{ range $paginator.Pages }}
                 {{ partial "article-list/compact" . }}
